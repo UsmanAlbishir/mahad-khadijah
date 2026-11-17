@@ -30,8 +30,8 @@ export function DashboardMetricsCards({ metrics, loading = false }: MetricsCards
       subtext: `${metrics.categoryACount} Cat A (1 Juz/wk) • ${metrics.categoryBCount} Cat B (½ Juz/wk)`,
       icon: Users,
       trend: "Active Cohort",
-      accent: "text-[#174D3A] dark:text-[#C6A45A]",
-      bgAccent: "bg-[#174D3A]/10 dark:bg-[#C6A45A]/10",
+      accent: "text-[#452D24] dark:text-[#E84F12]",
+      bgAccent: "bg-[#452D24]/10 dark:bg-[#E84F12]/10",
     },
     {
       title: "Active Tahfiz Faculty",
@@ -39,8 +39,8 @@ export function DashboardMetricsCards({ metrics, loading = false }: MetricsCards
       subtext: "Hafiz & Sanad credentialed instructors",
       icon: UserCheck,
       trend: "100% On-duty",
-      accent: "text-[#237A52] dark:text-emerald-400",
-      bgAccent: "bg-[#237A52]/10",
+      accent: "text-[#C35A2F] dark:text-[#E84F12]",
+      bgAccent: "bg-[#C35A2F]/10",
     },
     {
       title: "Today's Attendance",
@@ -48,8 +48,8 @@ export function DashboardMetricsCards({ metrics, loading = false }: MetricsCards
       subtext: "Morning & Afternoon Halaqah combined",
       icon: CalendarCheck,
       trend: "Above Target",
-      accent: "text-[#174D3A] dark:text-emerald-300",
-      bgAccent: "bg-emerald-500/10",
+      accent: "text-[#452D24] dark:text-[#E84F12]",
+      bgAccent: "bg-[#E84F12]/10",
     },
     {
       title: "Term Fees Recorded",
@@ -57,8 +57,8 @@ export function DashboardMetricsCards({ metrics, loading = false }: MetricsCards
       subtext: "Verified demo tuition payments",
       icon: CreditCard,
       trend: "Simulated",
-      accent: "text-[#C6A45A] dark:text-[#E8D8A7]",
-      bgAccent: "bg-[#C6A45A]/15",
+      accent: "text-[#E84F12] dark:text-[#E8D8A7]",
+      bgAccent: "bg-[#E84F12]/15",
     },
   ];
 
@@ -69,7 +69,7 @@ export function DashboardMetricsCards({ metrics, loading = false }: MetricsCards
         return (
           <div
             key={card.title}
-            className="group relative bg-card text-card-foreground rounded-xl border border-border p-5 shadow-xs hover:shadow-md transition-all duration-200 hover:border-[#C6A45A]/50 flex flex-col justify-between"
+            className="group relative bg-card text-card-foreground rounded-xl border border-border p-5 shadow-xs hover:shadow-md transition-all duration-200 hover:border-[#E84F12]/50 flex flex-col justify-between"
           >
             <div className="flex items-start justify-between">
               <div>

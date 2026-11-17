@@ -2,6 +2,7 @@
 
 import React, { useState, ChangeEvent, FormEvent } from "react";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 import {
   User,
   Phone,
@@ -197,7 +198,7 @@ export function StudentAdmissionForm() {
         type: "success",
         title: "Student Admitted Successfully (Mock Operation)",
         message: `${res.student.fullName} has been assigned Admission No ${res.student.admissionNumber} and placed into Category ${res.student.category}.`,
-        meta: "Simulated in-memory save • No live Supabase database mutation performed",
+        meta: "Demo record added to temporary session state • Not persisted",
       });
 
       setIsDirty(false);
@@ -238,7 +239,7 @@ export function StudentAdmissionForm() {
           <span>Back to Students Directory</span>
         </button>
 
-        <span className="text-[11px] font-mono px-2 py-0.5 rounded bg-muted text-[#174D3A] dark:text-[#C6A45A]">
+        <span className="text-[11px] font-mono px-2 py-0.5 rounded bg-muted text-[#452D24] dark:text-[#E84F12]">
           Auto-generating Admission No: MK/2026/011
         </span>
       </div>
@@ -262,7 +263,7 @@ export function StudentAdmissionForm() {
         {/* SECTION 1: Personal Information */}
         <div className="bg-card text-card-foreground rounded-xl border border-border p-5 shadow-xs space-y-4">
           <div className="flex items-center gap-2.5 pb-3 border-b border-border">
-            <div className="p-1.5 rounded-lg bg-[#174D3A]/10 text-[#174D3A] dark:text-[#C6A45A]">
+            <div className="p-1.5 rounded-lg bg-[#452D24]/10 text-[#452D24] dark:text-[#E84F12]">
               <User className="w-4 h-4" />
             </div>
             <div>
@@ -287,7 +288,7 @@ export function StudentAdmissionForm() {
                 value={formData.fullName}
                 onChange={handleChange}
                 placeholder="e.g. Zayn Al-Abidin Bello"
-                className={`w-full px-3 py-2 rounded-lg bg-background border text-xs focus:outline-hidden focus:ring-2 focus:ring-[#174D3A] ${
+                className={`w-full px-3 py-2 rounded-lg bg-background border text-xs focus:outline-hidden focus:ring-2 focus:ring-[#452D24] ${
                   errors.fullName ? "border-red-500" : "border-border"
                 }`}
               />
@@ -303,7 +304,7 @@ export function StudentAdmissionForm() {
               </label>
               <div className="px-3 py-2 rounded-lg bg-muted/60 border border-border text-xs font-mono text-muted-foreground flex items-center justify-between">
                 <span>MK/2026/011</span>
-                <span className="text-[10px] uppercase font-semibold text-[#174D3A] dark:text-[#C6A45A]">
+                <span className="text-[10px] uppercase font-semibold text-[#452D24] dark:text-[#E84F12]">
                   System Generated
                 </span>
               </div>
@@ -318,7 +319,7 @@ export function StudentAdmissionForm() {
                 name="gender"
                 value={formData.gender}
                 onChange={handleChange}
-                className="w-full px-3 py-2 rounded-lg bg-background border border-border text-xs focus:outline-hidden focus:ring-2 focus:ring-[#174D3A]"
+                className="w-full px-3 py-2 rounded-lg bg-background border border-border text-xs focus:outline-hidden focus:ring-2 focus:ring-[#452D24]"
               >
                 <option value="male">Male (Boy)</option>
                 <option value="female">Female (Girl)</option>
@@ -335,7 +336,7 @@ export function StudentAdmissionForm() {
                 name="dateOfBirth"
                 value={formData.dateOfBirth}
                 onChange={handleChange}
-                className="w-full px-3 py-2 rounded-lg bg-background border border-border text-xs focus:outline-hidden focus:ring-2 focus:ring-[#174D3A]"
+                className="w-full px-3 py-2 rounded-lg bg-background border border-border text-xs focus:outline-hidden focus:ring-2 focus:ring-[#452D24]"
               />
             </div>
 
@@ -349,7 +350,7 @@ export function StudentAdmissionForm() {
                 name="admissionDate"
                 value={formData.admissionDate}
                 onChange={handleChange}
-                className={`w-full px-3 py-2 rounded-lg bg-background border text-xs focus:outline-hidden focus:ring-2 focus:ring-[#174D3A] ${
+                className={`w-full px-3 py-2 rounded-lg bg-background border text-xs focus:outline-hidden focus:ring-2 focus:ring-[#452D24] ${
                   errors.admissionDate ? "border-red-500" : "border-border"
                 }`}
               />
@@ -369,7 +370,7 @@ export function StudentAdmissionForm() {
                 value={formData.address}
                 onChange={handleChange}
                 placeholder="e.g. No. 12 Sultan Road, Kaduna"
-                className={`w-full px-3 py-2 rounded-lg bg-background border text-xs focus:outline-hidden focus:ring-2 focus:ring-[#174D3A] ${
+                className={`w-full px-3 py-2 rounded-lg bg-background border text-xs focus:outline-hidden focus:ring-2 focus:ring-[#452D24] ${
                   errors.address ? "border-red-500" : "border-border"
                 }`}
               />
@@ -385,10 +386,13 @@ export function StudentAdmissionForm() {
               </label>
               <div className="flex items-center gap-4">
                 {formData.photoPreview ? (
-                  <div className="relative w-16 h-16 rounded-xl overflow-hidden border-2 border-[#174D3A] shrink-0">
-                    <img
+                  <div className="relative w-16 h-16 rounded-xl overflow-hidden border-2 border-[#452D24] shrink-0">
+                    <Image
                       src={formData.photoPreview}
                       alt="Student Preview"
+                      width={64}
+                      height={64}
+                      unoptimized
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -416,7 +420,7 @@ export function StudentAdmissionForm() {
         {/* SECTION 2: Guardian and Educational Background */}
         <div className="bg-card text-card-foreground rounded-xl border border-border p-5 shadow-xs space-y-4">
           <div className="flex items-center gap-2.5 pb-3 border-b border-border">
-            <div className="p-1.5 rounded-lg bg-[#C6A45A]/15 text-[#A87518] dark:text-[#C6A45A]">
+            <div className="p-1.5 rounded-lg bg-[#E84F12]/15 text-[#A87518] dark:text-[#E84F12]">
               <Phone className="w-4 h-4" />
             </div>
             <div>
@@ -441,7 +445,7 @@ export function StudentAdmissionForm() {
                 value={formData.guardianName}
                 onChange={handleChange}
                 placeholder="e.g. Alhaji Bello Sanusi"
-                className={`w-full px-3 py-2 rounded-lg bg-background border text-xs focus:outline-hidden focus:ring-2 focus:ring-[#174D3A] ${
+                className={`w-full px-3 py-2 rounded-lg bg-background border text-xs focus:outline-hidden focus:ring-2 focus:ring-[#452D24] ${
                   errors.guardianName ? "border-red-500" : "border-border"
                 }`}
               />
@@ -459,7 +463,7 @@ export function StudentAdmissionForm() {
                 name="guardianRelation"
                 value={formData.guardianRelation}
                 onChange={handleChange}
-                className="w-full px-3 py-2 rounded-lg bg-background border border-border text-xs focus:outline-hidden focus:ring-2 focus:ring-[#174D3A]"
+                className="w-full px-3 py-2 rounded-lg bg-background border border-border text-xs focus:outline-hidden focus:ring-2 focus:ring-[#452D24]"
               >
                 <option value="Father">Father</option>
                 <option value="Mother">Mother</option>
@@ -479,7 +483,7 @@ export function StudentAdmissionForm() {
                 value={formData.guardianPhone}
                 onChange={handleChange}
                 placeholder="e.g. +234 803 123 4567"
-                className={`w-full px-3 py-2 rounded-lg bg-background border text-xs focus:outline-hidden focus:ring-2 focus:ring-[#174D3A] ${
+                className={`w-full px-3 py-2 rounded-lg bg-background border text-xs focus:outline-hidden focus:ring-2 focus:ring-[#452D24] ${
                   errors.guardianPhone ? "border-red-500" : "border-border"
                 }`}
               />
@@ -499,7 +503,7 @@ export function StudentAdmissionForm() {
                 value={formData.previousSchool}
                 onChange={handleChange}
                 placeholder="e.g. Standard Model School"
-                className="w-full px-3 py-2 rounded-lg bg-background border border-border text-xs focus:outline-hidden focus:ring-2 focus:ring-[#174D3A]"
+                className="w-full px-3 py-2 rounded-lg bg-background border border-border text-xs focus:outline-hidden focus:ring-2 focus:ring-[#452D24]"
               />
             </div>
 
@@ -512,7 +516,7 @@ export function StudentAdmissionForm() {
                 name="arabicLiteracyLevel"
                 value={formData.arabicLiteracyLevel}
                 onChange={handleChange}
-                className="w-full px-3 py-2 rounded-lg bg-background border border-border text-xs focus:outline-hidden focus:ring-2 focus:ring-[#174D3A]"
+                className="w-full px-3 py-2 rounded-lg bg-background border border-border text-xs focus:outline-hidden focus:ring-2 focus:ring-[#452D24]"
               >
                 <option value="beginner">Beginner (Basic Letters & Vowels)</option>
                 <option value="intermediate">Intermediate (Fluent Reading with Tajweed)</option>
@@ -531,7 +535,7 @@ export function StudentAdmissionForm() {
                 value={formData.previousMemorisation}
                 onChange={handleChange}
                 placeholder="e.g. 2 Juz (Juz Amma & Tabarak)"
-                className="w-full px-3 py-2 rounded-lg bg-background border border-border text-xs focus:outline-hidden focus:ring-2 focus:ring-[#174D3A]"
+                className="w-full px-3 py-2 rounded-lg bg-background border border-border text-xs focus:outline-hidden focus:ring-2 focus:ring-[#452D24]"
               />
             </div>
           </div>
@@ -540,7 +544,7 @@ export function StudentAdmissionForm() {
         {/* SECTION 3: Academic Placement */}
         <div className="bg-card text-card-foreground rounded-xl border border-border p-5 shadow-xs space-y-4">
           <div className="flex items-center gap-2.5 pb-3 border-b border-border">
-            <div className="p-1.5 rounded-lg bg-emerald-500/10 text-emerald-700 dark:text-emerald-300">
+            <div className="p-1.5 rounded-lg bg-[#E84F12]/10 text-[#9B4123] dark:text-[#E84F12]">
               <BookOpen className="w-4 h-4" />
             </div>
             <div>
@@ -558,7 +562,7 @@ export function StudentAdmissionForm() {
             <label
               className={`p-4 rounded-xl border-2 cursor-pointer transition flex flex-col justify-between ${
                 formData.category === "A"
-                  ? "border-[#174D3A] bg-[#174D3A]/5 shadow-xs"
+                  ? "border-[#452D24] bg-[#452D24]/5 shadow-xs"
                   : "border-border hover:border-border/80"
               }`}
             >
@@ -571,17 +575,17 @@ export function StudentAdmissionForm() {
                       value="A"
                       checked={formData.category === "A"}
                       onChange={handleChange}
-                      className="text-[#174D3A] focus:ring-[#174D3A]"
+                      className="text-[#452D24] focus:ring-[#452D24]"
                     />
                     <span className="font-bold text-sm text-foreground">
                       Category A
                     </span>
                   </div>
-                  <p className="text-xs font-semibold text-[#174D3A] dark:text-[#C6A45A] mt-1">
+                  <p className="text-xs font-semibold text-[#452D24] dark:text-[#E84F12] mt-1">
                     Target: 1 Juz Per Week
                   </p>
                 </div>
-                <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-[#174D3A] text-white">
+                <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-[#452D24] text-white">
                   Accelerated
                 </span>
               </div>
@@ -594,7 +598,7 @@ export function StudentAdmissionForm() {
             <label
               className={`p-4 rounded-xl border-2 cursor-pointer transition flex flex-col justify-between ${
                 formData.category === "B"
-                  ? "border-[#C6A45A] bg-[#C6A45A]/5 shadow-xs"
+                  ? "border-[#E84F12] bg-[#E84F12]/5 shadow-xs"
                   : "border-border hover:border-border/80"
               }`}
             >
@@ -607,7 +611,7 @@ export function StudentAdmissionForm() {
                       value="B"
                       checked={formData.category === "B"}
                       onChange={handleChange}
-                      className="text-[#C6A45A] focus:ring-[#C6A45A]"
+                      className="text-[#E84F12] focus:ring-[#E84F12]"
                     />
                     <span className="font-bold text-sm text-foreground">
                       Category B
@@ -617,7 +621,7 @@ export function StudentAdmissionForm() {
                     Target: ½ Juz Per Week
                   </p>
                 </div>
-                <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-[#C6A45A] text-[#103729]">
+                <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-[#E84F12] text-[#37231C]">
                   Standard
                 </span>
               </div>
@@ -635,7 +639,7 @@ export function StudentAdmissionForm() {
                 name="academicSession"
                 value={formData.academicSession}
                 onChange={handleChange}
-                className="w-full px-3 py-2 rounded-lg bg-background border border-border text-xs focus:outline-hidden focus:ring-2 focus:ring-[#174D3A]"
+                className="w-full px-3 py-2 rounded-lg bg-background border border-border text-xs focus:outline-hidden focus:ring-2 focus:ring-[#452D24]"
               >
                 <option value="2025/2026 Academic Session">
                   2025/2026 Academic Session (Current)
@@ -652,7 +656,7 @@ export function StudentAdmissionForm() {
                 name="currentTerm"
                 value={formData.currentTerm}
                 onChange={handleChange}
-                className="w-full px-3 py-2 rounded-lg bg-background border border-border text-xs focus:outline-hidden focus:ring-2 focus:ring-[#174D3A]"
+                className="w-full px-3 py-2 rounded-lg bg-background border border-border text-xs focus:outline-hidden focus:ring-2 focus:ring-[#452D24]"
               >
                 <option value="First Term">First Term</option>
                 <option value="Second Term">Second Term</option>
@@ -685,7 +689,7 @@ export function StudentAdmissionForm() {
                 name="includePayment"
                 checked={formData.includePayment}
                 onChange={handleChange}
-                className="rounded border-border text-[#174D3A] focus:ring-[#174D3A]"
+                className="rounded border-border text-[#452D24] focus:ring-[#452D24]"
               />
               <span>Record Initial Payment</span>
             </label>
@@ -704,7 +708,7 @@ export function StudentAdmissionForm() {
                   value={formData.paymentAmount}
                   onChange={handleChange}
                   placeholder="150000"
-                  className={`w-full px-3 py-2 rounded-lg bg-background border text-xs focus:outline-hidden focus:ring-2 focus:ring-[#174D3A] ${
+                  className={`w-full px-3 py-2 rounded-lg bg-background border text-xs focus:outline-hidden focus:ring-2 focus:ring-[#452D24] ${
                     errors.paymentAmount ? "border-red-500" : "border-border"
                   }`}
                 />
@@ -723,7 +727,7 @@ export function StudentAdmissionForm() {
                   name="paymentDate"
                   value={formData.paymentDate}
                   onChange={handleChange}
-                  className="w-full px-3 py-2 rounded-lg bg-background border border-border text-xs focus:outline-hidden focus:ring-2 focus:ring-[#174D3A]"
+                  className="w-full px-3 py-2 rounded-lg bg-background border border-border text-xs focus:outline-hidden focus:ring-2 focus:ring-[#452D24]"
                 />
               </div>
 
@@ -736,7 +740,7 @@ export function StudentAdmissionForm() {
                   name="paymentMethod"
                   value={formData.paymentMethod}
                   onChange={handleChange}
-                  className="w-full px-3 py-2 rounded-lg bg-background border border-border text-xs focus:outline-hidden focus:ring-2 focus:ring-[#174D3A]"
+                  className="w-full px-3 py-2 rounded-lg bg-background border border-border text-xs focus:outline-hidden focus:ring-2 focus:ring-[#452D24]"
                 >
                   <option value="bank_transfer">Direct Bank Transfer</option>
                   <option value="pos">POS Terminal</option>
@@ -756,7 +760,7 @@ export function StudentAdmissionForm() {
                   value={formData.paymentReference}
                   onChange={handleChange}
                   placeholder="e.g. MK-TRF-2026-99"
-                  className={`w-full px-3 py-2 rounded-lg bg-background border text-xs focus:outline-hidden focus:ring-2 focus:ring-[#174D3A] ${
+                  className={`w-full px-3 py-2 rounded-lg bg-background border text-xs focus:outline-hidden focus:ring-2 focus:ring-[#452D24] ${
                     errors.paymentReference ? "border-red-500" : "border-border"
                   }`}
                 />
@@ -783,7 +787,7 @@ export function StudentAdmissionForm() {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl bg-[#174D3A] text-white text-xs sm:text-sm font-bold hover:bg-[#103729] disabled:opacity-50 transition shadow-md ring-1 ring-[#C6A45A]/30 cursor-pointer"
+            className="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl bg-[#452D24] text-white text-xs sm:text-sm font-bold hover:bg-[#37231C] disabled:opacity-50 transition shadow-md ring-1 ring-[#E84F12]/30 cursor-pointer"
           >
             {isSubmitting ? (
               <>
@@ -792,7 +796,7 @@ export function StudentAdmissionForm() {
               </>
             ) : (
               <>
-                <CheckCircle2 className="w-4 h-4 text-[#C6A45A]" />
+                <CheckCircle2 className="w-4 h-4 text-[#E84F12]" />
                 <span>Complete Student Admission</span>
               </>
             )}

@@ -15,7 +15,7 @@ export function MemorisationProgressCard({ metrics }: MemorisationProgressProps)
       {/* Header */}
       <div className="flex items-center justify-between pb-4 border-b border-border">
         <div className="flex items-center gap-2.5">
-          <div className="p-2 rounded-lg bg-[#174D3A]/10 text-[#174D3A] dark:text-[#C6A45A]">
+          <div className="p-2 rounded-lg bg-[#452D24]/10 text-[#452D24] dark:text-[#E84F12]">
             <BookOpen className="w-5 h-5" />
           </div>
           <div>
@@ -29,7 +29,7 @@ export function MemorisationProgressCard({ metrics }: MemorisationProgressProps)
         </div>
         <Link
           href="/memorisation"
-          className="text-xs font-semibold text-[#174D3A] dark:text-[#C6A45A] hover:underline flex items-center gap-1"
+          className="text-xs font-semibold text-[#452D24] dark:text-[#E84F12] hover:underline flex items-center gap-1"
         >
           <span>View all records</span>
           <ArrowRight className="w-3.5 h-3.5" />
@@ -42,16 +42,16 @@ export function MemorisationProgressCard({ metrics }: MemorisationProgressProps)
         <div>
           <div className="flex items-center justify-between text-xs mb-1.5">
             <div className="flex items-center gap-1.5 font-semibold text-foreground">
-              <span className="w-2.5 h-2.5 rounded-full bg-[#174D3A]" />
+              <span className="w-2.5 h-2.5 rounded-full bg-[#452D24]" />
               <span>Category A (Target: 1 Juz / Week)</span>
             </div>
-            <span className="font-bold text-[#174D3A] dark:text-[#C6A45A]">
+            <span className="font-bold text-[#452D24] dark:text-[#E84F12]">
               96% Pace Met
             </span>
           </div>
           <div className="h-3 w-full bg-muted rounded-full overflow-hidden p-0.5 border border-border/40">
             <div
-              className="h-full bg-gradient-to-r from-[#174D3A] to-[#237A52] rounded-full transition-all duration-500"
+              className="h-full bg-gradient-to-r from-[#452D24] to-[#C35A2F] rounded-full transition-all duration-500"
               style={{ width: "96%" }}
             />
           </div>
@@ -65,7 +65,7 @@ export function MemorisationProgressCard({ metrics }: MemorisationProgressProps)
         <div>
           <div className="flex items-center justify-between text-xs mb-1.5">
             <div className="flex items-center gap-1.5 font-semibold text-foreground">
-              <span className="w-2.5 h-2.5 rounded-full bg-[#C6A45A]" />
+              <span className="w-2.5 h-2.5 rounded-full bg-[#E84F12]" />
               <span>Category B (Target: ½ Juz / Week)</span>
             </div>
             <span className="font-bold text-[#A87518] dark:text-[#E8D8A7]">
@@ -74,7 +74,7 @@ export function MemorisationProgressCard({ metrics }: MemorisationProgressProps)
           </div>
           <div className="h-3 w-full bg-muted rounded-full overflow-hidden p-0.5 border border-border/40">
             <div
-              className="h-full bg-gradient-to-r from-[#C6A45A] to-[#A87518] rounded-full transition-all duration-500"
+              className="h-full bg-gradient-to-r from-[#E84F12] to-[#A87518] rounded-full transition-all duration-500"
               style={{ width: "93%" }}
             />
           </div>
@@ -88,7 +88,7 @@ export function MemorisationProgressCard({ metrics }: MemorisationProgressProps)
       {/* Weekly Progress Breakdown Pillars */}
       <div className="pt-3 border-t border-border">
         <h4 className="text-xs font-semibold text-foreground mb-3 flex items-center gap-1.5">
-          <TrendingUp className="w-4 h-4 text-emerald-600" />
+          <TrendingUp className="w-4 h-4 text-[#C35A2F]" />
           <span>Curricular Consistency Across Term Weeks</span>
         </h4>
 
@@ -102,7 +102,7 @@ export function MemorisationProgressCard({ metrics }: MemorisationProgressProps)
                 {item.weekLabel}
               </span>
               <div className="mt-1 flex items-baseline justify-center gap-1">
-                <span className="text-sm font-extrabold text-[#174D3A] dark:text-[#C6A45A]">
+                <span className="text-sm font-extrabold text-[#452D24] dark:text-[#E84F12]">
                   {item.catATargetMetPct}%
                 </span>
                 <span className="text-[10px] text-muted-foreground">Cat A</span>

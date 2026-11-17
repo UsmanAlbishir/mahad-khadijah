@@ -68,7 +68,7 @@ export function StudentDirectory() {
     switch (st) {
       case "paid":
         return (
-          <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 border border-emerald-500/30">
+          <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-[#E84F12]/10 text-[#9B4123] dark:text-[#E84F12] border border-[#E84F12]/30">
             <CheckCircle className="w-3 h-3" />
             <span>Paid</span>
           </span>
@@ -100,18 +100,18 @@ export function StudentDirectory() {
   const getCategoryBadge = (cat: StudentCategory) => {
     if (cat === "A") {
       return (
-        <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[11px] font-bold bg-[#174D3A] text-white">
+        <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[11px] font-bold bg-[#452D24] text-white">
           <span>Cat A</span>
-          <span className="text-[10px] text-emerald-200/90 font-normal">
+          <span className="text-[10px] text-white/80 font-normal">
             (1 Juz/wk)
           </span>
         </span>
       );
     }
     return (
-      <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[11px] font-bold bg-[#C6A45A] text-[#103729]">
+      <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[11px] font-bold bg-[#E84F12] text-[#37231C]">
         <span>Cat B</span>
-        <span className="text-[10px] text-[#103729]/80 font-normal">
+        <span className="text-[10px] text-[#37231C]/80 font-normal">
           (½ Juz/wk)
         </span>
       </span>
@@ -133,7 +133,7 @@ export function StudentDirectory() {
 
         <Link
           href="/students/new"
-          className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[#174D3A] text-white text-xs sm:text-sm font-semibold hover:bg-[#103729] transition shadow-xs ring-1 ring-[#C6A45A]/30 shrink-0"
+          className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[#452D24] text-white text-xs sm:text-sm font-semibold hover:bg-[#37231C] transition shadow-xs ring-1 ring-[#E84F12]/30 shrink-0"
         >
           <Plus className="w-4 h-4" />
           <span>Add New Student</span>
@@ -154,7 +154,7 @@ export function StudentDirectory() {
                 setSearch(e.target.value);
                 setPage(1);
               }}
-              className="w-full pl-9 pr-4 py-2 rounded-lg bg-background border border-border text-xs focus:outline-hidden focus:ring-2 focus:ring-[#174D3A]"
+              className="w-full pl-9 pr-4 py-2 rounded-lg bg-background border border-border text-xs focus:outline-hidden focus:ring-2 focus:ring-[#452D24]"
             />
           </div>
 
@@ -166,7 +166,7 @@ export function StudentDirectory() {
                 setCategory(e.target.value as StudentCategory | "all");
                 setPage(1);
               }}
-              className="w-full px-3 py-2 rounded-lg bg-background border border-border text-xs focus:outline-hidden focus:ring-2 focus:ring-[#174D3A]"
+              className="w-full px-3 py-2 rounded-lg bg-background border border-border text-xs focus:outline-hidden focus:ring-2 focus:ring-[#452D24]"
             >
               <option value="all">All Categories</option>
               <option value="A">Category A (1 Juz/wk)</option>
@@ -182,7 +182,7 @@ export function StudentDirectory() {
                 setStatus(e.target.value as StudentStatus | "all");
                 setPage(1);
               }}
-              className="w-full px-3 py-2 rounded-lg bg-background border border-border text-xs focus:outline-hidden focus:ring-2 focus:ring-[#174D3A]"
+              className="w-full px-3 py-2 rounded-lg bg-background border border-border text-xs focus:outline-hidden focus:ring-2 focus:ring-[#452D24]"
             >
               <option value="all">All Statuses</option>
               <option value="active">Active Only</option>
@@ -198,7 +198,7 @@ export function StudentDirectory() {
                 setPaymentStatus(e.target.value as PaymentStatus | "all");
                 setPage(1);
               }}
-              className="w-full px-3 py-2 rounded-lg bg-background border border-border text-xs focus:outline-hidden focus:ring-2 focus:ring-[#174D3A]"
+              className="w-full px-3 py-2 rounded-lg bg-background border border-border text-xs focus:outline-hidden focus:ring-2 focus:ring-[#452D24]"
             >
               <option value="all">All Payment Statuses</option>
               <option value="paid">Paid</option>
@@ -214,7 +214,7 @@ export function StudentDirectory() {
           <div>
             Showing <strong className="text-foreground">{data.students.length}</strong> of{" "}
             <strong className="text-foreground">{data.total}</strong> students
-            {isPending && <span className="ml-2 text-emerald-600 animate-pulse">• Updating...</span>}
+            {isPending && <span className="ml-2 text-[#C35A2F] animate-pulse">• Updating...</span>}
           </div>
 
           {(search || category !== "all" || status !== "all" || paymentStatus !== "all") && (
@@ -227,7 +227,7 @@ export function StudentDirectory() {
                 setPaymentStatus("all");
                 setPage(1);
               }}
-              className="text-[#174D3A] dark:text-[#C6A45A] font-medium hover:underline"
+              className="text-[#452D24] dark:text-[#E84F12] font-medium hover:underline"
             >
               Reset Filters
             </button>
@@ -300,7 +300,7 @@ export function StudentDirectory() {
                     <td className="py-3.5 px-4 font-mono font-medium text-foreground">
                       <Link
                         href={`/students/${student.id}`}
-                        className="hover:underline text-[#174D3A] dark:text-[#C6A45A] font-semibold"
+                        className="hover:underline text-[#452D24] dark:text-[#E84F12] font-semibold"
                       >
                         {student.admissionNumber}
                       </Link>
@@ -323,7 +323,7 @@ export function StudentDirectory() {
                     </td>
                     <td className="py-3.5 px-4">
                       <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-muted text-foreground font-semibold">
-                        <BookOpen className="w-3 h-3 text-[#174D3A] dark:text-[#C6A45A]" />
+                        <BookOpen className="w-3 h-3 text-[#452D24] dark:text-[#E84F12]" />
                         <span>Juz {student.currentJuz} / 30</span>
                       </span>
                     </td>
@@ -379,7 +379,7 @@ export function StudentDirectory() {
             >
               <div className="flex items-start justify-between">
                 <div>
-                  <span className="font-mono text-xs font-semibold px-2 py-0.5 rounded bg-muted text-[#174D3A] dark:text-[#C6A45A]">
+                  <span className="font-mono text-xs font-semibold px-2 py-0.5 rounded bg-muted text-[#452D24] dark:text-[#E84F12]">
                     {student.admissionNumber}
                   </span>
                   <h3 className="font-bold text-sm text-foreground mt-1">
@@ -418,7 +418,7 @@ export function StudentDirectory() {
                 <div className="flex items-center gap-2">
                   <Link
                     href={`/students/${student.id}`}
-                    className="px-3 py-1 rounded-md bg-[#174D3A] text-white text-xs font-medium hover:bg-[#103729]"
+                    className="px-3 py-1 rounded-md bg-[#452D24] text-white text-xs font-medium hover:bg-[#37231C]"
                   >
                     View Profile
                   </Link>

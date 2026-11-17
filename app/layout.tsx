@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist } from "next/font/google";
+// import { Geist } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import "./globals.css";
 
@@ -14,11 +14,9 @@ export const metadata: Metadata = {
     "Modern administrative prototype for Madad Khadijah Litahfizil Qur’an, managing student admissions, halaqah attendance, teachers, and weekly Qur'an memorisation progress.",
 };
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  display: "swap",
-  subsets: ["latin"],
-});
+
+// Use a system font stack and local Geist if available
+import "../app/globals.css";
 
 export default function RootLayout({
   children,
@@ -27,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${geistSans.className} antialiased`}>
+      <body className="font-sans antialiased">
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

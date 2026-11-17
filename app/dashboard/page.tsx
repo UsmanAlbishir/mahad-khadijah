@@ -61,24 +61,24 @@ export default function DashboardPage() {
     <AppShell>
       <div className="space-y-6">
         {/* Welcome Banner with Islamic Date Context & Session Selector */}
-        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-[#103729] via-[#174D3A] to-[#1a5a43] text-white p-6 sm:p-8 shadow-lg border border-[#C6A45A]/30">
+        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-[#37231C] via-[#452D24] to-[#9B4123] text-white p-6 sm:p-8 shadow-lg border border-[#E84F12]/30">
           {/* Subtle Islamic geometric star accent in background */}
           <div className="absolute right-0 top-0 bottom-0 w-1/3 opacity-10 pointer-events-none bg-islamic-pattern" />
 
           <div className="relative z-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
             <div className="space-y-1.5 max-w-2xl">
               <div className="flex items-center gap-2">
-                <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-[#C6A45A] text-[#103729]">
+                <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-[#E84F12] text-[#37231C]">
                   Bismillah ir-Rahman ir-Rahim
                 </span>
-                <span className="text-xs text-emerald-200/80">
+                <span className="text-xs text-white/75">
                   Rabīʿ al-Thānī 1448 AH
                 </span>
               </div>
               <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight font-serif text-[#F7F3E8]">
                 Ahlan wa Sahlan, Administrator
               </h2>
-              <p className="text-xs sm:text-sm text-emerald-100/90 leading-relaxed">
+              <p className="text-xs sm:text-sm text-white/90 leading-relaxed">
                 Welcome to the Madad Khadijah Litahfizil Qur’an School Management Prototype.
                 Supervise student memorisation milestones, daily halaqah circles, and administrative operations.
               </p>
@@ -87,14 +87,14 @@ export default function DashboardPage() {
             {/* Academic Session and Term Selectors */}
             <div className="flex flex-col sm:flex-row gap-3 bg-black/25 backdrop-blur-xs p-3.5 rounded-xl border border-white/10 shrink-0">
               <div className="space-y-1">
-                <label className="text-[11px] font-semibold text-emerald-200 uppercase tracking-wider flex items-center gap-1">
-                  <Calendar className="w-3 h-3 text-[#C6A45A]" />
+                <label className="text-[11px] font-semibold text-white/70 uppercase tracking-wider flex items-center gap-1">
+                  <Calendar className="w-3 h-3 text-[#E84F12]" />
                   <span>Academic Session</span>
                 </label>
                 <select
                   value={selectedSession}
                   onChange={(e) => setSelectedSession(e.target.value)}
-                  className="w-full bg-[#103729] text-white border border-[#C6A45A]/50 rounded-lg px-2.5 py-1.5 text-xs font-medium focus:outline-hidden focus:ring-2 focus:ring-[#C6A45A]"
+                  className="w-full bg-[#37231C] text-white border border-[#E84F12]/50 rounded-lg px-2.5 py-1.5 text-xs font-medium focus:outline-hidden focus:ring-2 focus:ring-[#E84F12]"
                 >
                   {sessions.length > 0 ? (
                     sessions.map((s) => (
@@ -109,14 +109,14 @@ export default function DashboardPage() {
               </div>
 
               <div className="space-y-1">
-                <label className="text-[11px] font-semibold text-emerald-200 uppercase tracking-wider flex items-center gap-1">
-                  <Layers className="w-3 h-3 text-[#C6A45A]" />
+                <label className="text-[11px] font-semibold text-white/70 uppercase tracking-wider flex items-center gap-1">
+                  <Layers className="w-3 h-3 text-[#E84F12]" />
                   <span>Term</span>
                 </label>
                 <select
                   value={selectedTerm}
                   onChange={(e) => setSelectedTerm(e.target.value)}
-                  className="w-full bg-[#103729] text-white border border-[#C6A45A]/50 rounded-lg px-2.5 py-1.5 text-xs font-medium focus:outline-hidden focus:ring-2 focus:ring-[#C6A45A]"
+                  className="w-full bg-[#37231C] text-white border border-[#E84F12]/50 rounded-lg px-2.5 py-1.5 text-xs font-medium focus:outline-hidden focus:ring-2 focus:ring-[#E84F12]"
                 >
                   <option value="First Term">First Term (Current)</option>
                   <option value="Second Term">Second Term</option>
@@ -130,7 +130,7 @@ export default function DashboardPage() {
         {/* Prototype State Toggle Bar */}
         <div className="flex flex-wrap items-center justify-between gap-3 px-4 py-2.5 rounded-xl bg-card border border-border text-xs">
           <div className="flex items-center gap-2 text-muted-foreground">
-            <Info className="w-4 h-4 text-[#C6A45A] shrink-0" />
+            <Info className="w-4 h-4 text-[#E84F12] shrink-0" />
             <span>
               Currently viewing <strong>{selectedSession === "session-2025-2026" ? "2025/2026" : "2024/2025"}</strong> ({selectedTerm}) demonstration dataset.
             </span>
@@ -143,7 +143,7 @@ export default function DashboardPage() {
           >
             {simulateEmptyState ? (
               <>
-                <Eye className="w-3.5 h-3.5 text-[#174D3A] dark:text-[#C6A45A]" />
+                <Eye className="w-3.5 h-3.5 text-[#452D24] dark:text-[#E84F12]" />
                 <span>Show Populated Data</span>
               </>
             ) : (

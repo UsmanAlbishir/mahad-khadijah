@@ -19,7 +19,7 @@ export function DemoBadge({ variant = "pill", className = "" }: DemoBadgeProps) 
             PROTOTYPE MODE
           </span>
           <span className="truncate">
-            All records displayed are fictional demonstration data. No live Supabase database reads or writes are performed in this milestone.
+            All records are fictional demo data. Changes are temporary and stay in this browser session.
           </span>
         </div>
       </div>
@@ -74,10 +74,10 @@ export function DemoBadge({ variant = "pill", className = "" }: DemoBadgeProps) 
                 <strong>Isolated Demo Data:</strong> All student names, admission numbers, teacher credentials, and financial figures are realistic mock entities curated for testing the UI/UX.
               </p>
               <p>
-                <strong>Zero Database Mutations:</strong> No live Supabase database operations are executed during this milestone. Any additions or edits you perform exist in the active browser memory state.
+                <strong>Frontend-only:</strong> No backend or database is connected. Additions and edits exist only in the active browser memory state.
               </p>
               <p>
-                <strong>Production Readiness:</strong> The frontend utilizes an abstraction layer (`lib/mock-services.ts`), ready to connect seamlessly to authorized backend APIs when approved.
+                <strong>Integration boundary:</strong> The mock service layer keeps demo interactions separate from a future authorized backend integration.
               </p>
             </div>
 

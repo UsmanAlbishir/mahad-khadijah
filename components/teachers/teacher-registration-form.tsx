@@ -2,6 +2,7 @@
 
 import React, { useState, ChangeEvent, FormEvent } from "react";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 import {
   User,
   ArrowLeft,
@@ -138,7 +139,7 @@ export function TeacherRegistrationForm() {
         type: "success",
         title: "Instructor Registered (Mock Operation)",
         message: `${newTeacher.fullName} has been added with Employee ID ${newTeacher.employeeId}.`,
-        meta: "Simulated in-memory save • No live Supabase database write",
+        meta: "Demo record added to temporary session state • Not persisted",
       });
 
       setIsDirty(false);
@@ -178,7 +179,7 @@ export function TeacherRegistrationForm() {
           <span>Back to Faculty Directory</span>
         </button>
 
-        <span className="text-[11px] font-mono px-2 py-0.5 rounded bg-muted text-[#174D3A] dark:text-[#C6A45A]">
+        <span className="text-[11px] font-mono px-2 py-0.5 rounded bg-muted text-[#452D24] dark:text-[#E84F12]">
           Auto Employee ID: MK-T-006
         </span>
       </div>
@@ -199,7 +200,7 @@ export function TeacherRegistrationForm() {
       <form onSubmit={handleSubmit} className="space-y-6">
         <div className="bg-card text-card-foreground rounded-xl border border-border p-5 shadow-xs space-y-4">
           <div className="flex items-center gap-2.5 pb-3 border-b border-border">
-            <div className="p-1.5 rounded-lg bg-[#174D3A]/10 text-[#174D3A] dark:text-[#C6A45A]">
+            <div className="p-1.5 rounded-lg bg-[#452D24]/10 text-[#452D24] dark:text-[#E84F12]">
               <User className="w-4 h-4" />
             </div>
             <div>
@@ -224,7 +225,7 @@ export function TeacherRegistrationForm() {
                 value={formData.fullName}
                 onChange={handleChange}
                 placeholder="e.g. Ustadh Idris Al-Mustapha"
-                className={`w-full px-3 py-2 rounded-lg bg-background border text-xs focus:outline-hidden focus:ring-2 focus:ring-[#174D3A] ${
+                className={`w-full px-3 py-2 rounded-lg bg-background border text-xs focus:outline-hidden focus:ring-2 focus:ring-[#452D24] ${
                   errors.fullName ? "border-red-500" : "border-border"
                 }`}
               />
@@ -244,7 +245,7 @@ export function TeacherRegistrationForm() {
                 value={formData.role}
                 onChange={handleChange}
                 placeholder="e.g. Tahfiz & Tajweed Instructor"
-                className="w-full px-3 py-2 rounded-lg bg-background border border-border text-xs focus:outline-hidden focus:ring-2 focus:ring-[#174D3A]"
+                className="w-full px-3 py-2 rounded-lg bg-background border border-border text-xs focus:outline-hidden focus:ring-2 focus:ring-[#452D24]"
               />
             </div>
 
@@ -258,7 +259,7 @@ export function TeacherRegistrationForm() {
                 name="dateOfBirth"
                 value={formData.dateOfBirth}
                 onChange={handleChange}
-                className="w-full px-3 py-2 rounded-lg bg-background border border-border text-xs focus:outline-hidden focus:ring-2 focus:ring-[#174D3A]"
+                className="w-full px-3 py-2 rounded-lg bg-background border border-border text-xs focus:outline-hidden focus:ring-2 focus:ring-[#452D24]"
               />
             </div>
 
@@ -273,7 +274,7 @@ export function TeacherRegistrationForm() {
                 value={formData.phone}
                 onChange={handleChange}
                 placeholder="e.g. +234 803 777 8899"
-                className={`w-full px-3 py-2 rounded-lg bg-background border text-xs focus:outline-hidden focus:ring-2 focus:ring-[#174D3A] ${
+                className={`w-full px-3 py-2 rounded-lg bg-background border text-xs focus:outline-hidden focus:ring-2 focus:ring-[#452D24] ${
                   errors.phone ? "border-red-500" : "border-border"
                 }`}
               />
@@ -293,7 +294,7 @@ export function TeacherRegistrationForm() {
                 value={formData.email}
                 onChange={handleChange}
                 placeholder="e.g. idris.mustapha@madadkhadijah.sch.ng"
-                className={`w-full px-3 py-2 rounded-lg bg-background border text-xs focus:outline-hidden focus:ring-2 focus:ring-[#174D3A] ${
+                className={`w-full px-3 py-2 rounded-lg bg-background border text-xs focus:outline-hidden focus:ring-2 focus:ring-[#452D24] ${
                   errors.email ? "border-red-500" : "border-border"
                 }`}
               />
@@ -313,7 +314,7 @@ export function TeacherRegistrationForm() {
                 value={formData.address}
                 onChange={handleChange}
                 placeholder="e.g. No. 15 Rabah Road, Malali, Kaduna"
-                className={`w-full px-3 py-2 rounded-lg bg-background border text-xs focus:outline-hidden focus:ring-2 focus:ring-[#174D3A] ${
+                className={`w-full px-3 py-2 rounded-lg bg-background border text-xs focus:outline-hidden focus:ring-2 focus:ring-[#452D24] ${
                   errors.address ? "border-red-500" : "border-border"
                 }`}
               />
@@ -333,7 +334,7 @@ export function TeacherRegistrationForm() {
                 value={formData.qualifications}
                 onChange={handleChange}
                 placeholder="e.g. Hafiz al-Qur'an, Ijazah in Hafs & Warsh with connected Sanad, B.A. Islamic Studies"
-                className={`w-full px-3 py-2 rounded-lg bg-background border text-xs focus:outline-hidden focus:ring-2 focus:ring-[#174D3A] ${
+                className={`w-full px-3 py-2 rounded-lg bg-background border text-xs focus:outline-hidden focus:ring-2 focus:ring-[#452D24] ${
                   errors.qualifications ? "border-red-500" : "border-border"
                 }`}
               />
@@ -351,7 +352,7 @@ export function TeacherRegistrationForm() {
                 name="categorySelection"
                 value={formData.categorySelection}
                 onChange={handleChange}
-                className="w-full px-3 py-2 rounded-lg bg-background border border-border text-xs focus:outline-hidden focus:ring-2 focus:ring-[#174D3A]"
+                className="w-full px-3 py-2 rounded-lg bg-background border border-border text-xs focus:outline-hidden focus:ring-2 focus:ring-[#452D24]"
               >
                 <option value="both">Both Categories (A & B)</option>
                 <option value="A">Category A Only (1 Juz/week pace)</option>
@@ -366,10 +367,13 @@ export function TeacherRegistrationForm() {
               </label>
               <div className="flex items-center gap-4">
                 {formData.photoPreview ? (
-                  <div className="w-14 h-14 rounded-xl overflow-hidden border-2 border-[#174D3A] shrink-0">
-                    <img
+                  <div className="w-14 h-14 rounded-xl overflow-hidden border-2 border-[#452D24] shrink-0">
+                    <Image
                       src={formData.photoPreview}
                       alt="Preview"
+                      width={56}
+                      height={56}
+                      unoptimized
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -402,7 +406,7 @@ export function TeacherRegistrationForm() {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl bg-[#174D3A] text-white text-xs sm:text-sm font-bold hover:bg-[#103729] disabled:opacity-50 transition shadow-md ring-1 ring-[#C6A45A]/30 cursor-pointer"
+            className="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl bg-[#452D24] text-white text-xs sm:text-sm font-bold hover:bg-[#37231C] disabled:opacity-50 transition shadow-md ring-1 ring-[#E84F12]/30 cursor-pointer"
           >
             {isSubmitting ? (
               <>
@@ -411,7 +415,7 @@ export function TeacherRegistrationForm() {
               </>
             ) : (
               <>
-                <CheckCircle2 className="w-4 h-4 text-[#C6A45A]" />
+                <CheckCircle2 className="w-4 h-4 text-[#E84F12]" />
                 <span>Confirm Registration (Mock)</span>
               </>
             )}

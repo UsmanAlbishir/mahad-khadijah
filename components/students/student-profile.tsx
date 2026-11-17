@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import {
   ArrowLeft,
   User,
@@ -141,7 +142,7 @@ export function StudentProfile({ studentId }: StudentProfileProps) {
         <div className="pt-2">
           <Link
             href="/students"
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#174D3A] text-white text-xs font-semibold hover:bg-[#103729]"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#452D24] text-white text-xs font-semibold hover:bg-[#37231C]"
           >
             <ArrowLeft className="w-4 h-4" />
             <span>Return to Student Directory</span>
@@ -153,20 +154,20 @@ export function StudentProfile({ studentId }: StudentProfileProps) {
 
   const categoryBadge =
     student.category === "A" ? (
-      <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-[#174D3A] text-white shadow-xs">
-        <BookOpen className="w-3.5 h-3.5 text-[#C6A45A]" />
+      <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-[#452D24] text-white shadow-xs">
+        <BookOpen className="w-3.5 h-3.5 text-[#E84F12]" />
         <span>Category A (1 Juz / Week)</span>
       </span>
     ) : (
-      <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-[#C6A45A] text-[#103729] shadow-xs">
-        <BookOpen className="w-3.5 h-3.5 text-[#103729]" />
+      <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-[#E84F12] text-[#37231C] shadow-xs">
+        <BookOpen className="w-3.5 h-3.5 text-[#37231C]" />
         <span>Category B (½ Juz / Week)</span>
       </span>
     );
 
   const statusBadge =
     student.status === "active" ? (
-      <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 border border-emerald-500/30">
+      <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-[#E84F12]/10 text-[#9B4123] dark:text-[#E84F12] border border-[#E84F12]/30">
         <CheckCircle2 className="w-3 h-3" />
         <span>Enrolled & Active</span>
       </span>
@@ -211,11 +212,14 @@ export function StudentProfile({ studentId }: StudentProfileProps) {
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 relative z-10">
           <div className="flex items-start gap-4">
             {/* Avatar / Photo */}
-            <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-br from-[#174D3A] to-[#103729] text-[#C6A45A] font-bold text-2xl flex items-center justify-center shrink-0 shadow-md border-2 border-[#C6A45A]/30">
+            <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-br from-[#452D24] to-[#37231C] text-[#E84F12] font-bold text-2xl flex items-center justify-center shrink-0 shadow-md border-2 border-[#E84F12]/30">
               {student.photoUrl ? (
-                <img
+                <Image
                   src={student.photoUrl}
                   alt={student.fullName}
+                  width={80}
+                  height={80}
+                  unoptimized
                   className="w-full h-full object-cover rounded-2xl"
                 />
               ) : (
@@ -229,7 +233,7 @@ export function StudentProfile({ studentId }: StudentProfileProps) {
 
             <div className="space-y-1">
               <div className="flex flex-wrap items-center gap-2">
-                <span className="font-mono text-xs font-bold px-2 py-0.5 rounded bg-muted text-[#174D3A] dark:text-[#C6A45A]">
+                <span className="font-mono text-xs font-bold px-2 py-0.5 rounded bg-muted text-[#452D24] dark:text-[#E84F12]">
                   {student.admissionNumber}
                 </span>
                 {statusBadge}
@@ -254,7 +258,7 @@ export function StudentProfile({ studentId }: StudentProfileProps) {
               <span className="text-[10px] uppercase font-bold text-muted-foreground block">
                 Current Level
               </span>
-              <span className="text-base font-extrabold text-[#174D3A] dark:text-[#C6A45A]">
+              <span className="text-base font-extrabold text-[#452D24] dark:text-[#E84F12]">
                 Juz {student.currentJuz} / 30
               </span>
             </div>
@@ -272,7 +276,7 @@ export function StudentProfile({ studentId }: StudentProfileProps) {
               <span className="text-[10px] uppercase font-bold text-muted-foreground block">
                 Fee Status
               </span>
-              <span className="text-base font-extrabold capitalize text-emerald-700 dark:text-emerald-400">
+              <span className="text-base font-extrabold capitalize text-[#9B4123] dark:text-[#E84F12]">
                 {student.paymentStatus}
               </span>
             </div>
@@ -297,7 +301,7 @@ export function StudentProfile({ studentId }: StudentProfileProps) {
               onClick={() => setActiveTab(tab.id as typeof activeTab)}
               className={`flex items-center gap-2 px-4 py-3 text-xs sm:text-sm font-semibold border-b-2 whitespace-nowrap transition cursor-pointer ${
                 isActive
-                  ? "border-[#174D3A] text-[#174D3A] dark:text-[#C6A45A] dark:border-[#C6A45A]"
+                  ? "border-[#452D24] text-[#452D24] dark:text-[#E84F12] dark:border-[#E84F12]"
                   : "border-transparent text-muted-foreground hover:text-foreground"
               }`}
             >
@@ -314,7 +318,7 @@ export function StudentProfile({ studentId }: StudentProfileProps) {
           {/* Personal Demographic Details */}
           <div className="bg-card text-card-foreground rounded-xl border border-border p-5 shadow-xs space-y-4">
             <h3 className="text-sm font-bold text-foreground pb-2 border-b border-border flex items-center gap-2">
-              <User className="w-4 h-4 text-[#174D3A] dark:text-[#C6A45A]" />
+              <User className="w-4 h-4 text-[#452D24] dark:text-[#E84F12]" />
               <span>Personal Information</span>
             </h3>
 
@@ -345,7 +349,7 @@ export function StudentProfile({ studentId }: StudentProfileProps) {
           {/* Guardian & Educational Background */}
           <div className="bg-card text-card-foreground rounded-xl border border-border p-5 shadow-xs space-y-4">
             <h3 className="text-sm font-bold text-foreground pb-2 border-b border-border flex items-center gap-2">
-              <Phone className="w-4 h-4 text-[#C6A45A]" />
+              <Phone className="w-4 h-4 text-[#E84F12]" />
               <span>Guardian & Prior Tahfiz Background</span>
             </h3>
 
@@ -358,7 +362,7 @@ export function StudentProfile({ studentId }: StudentProfileProps) {
                 <span className="text-muted-foreground">Guardian Phone:</span>
                 <a
                   href={`tel:${student.guardianPhone}`}
-                  className="font-semibold text-[#174D3A] dark:text-[#C6A45A] hover:underline"
+                  className="font-semibold text-[#452D24] dark:text-[#E84F12] hover:underline"
                 >
                   {student.guardianPhone}
                 </a>
@@ -381,7 +385,7 @@ export function StudentProfile({ studentId }: StudentProfileProps) {
           {/* Teacher Notes & Observation */}
           <div className="md:col-span-2 bg-card text-card-foreground rounded-xl border border-border p-5 shadow-xs space-y-3">
             <h3 className="text-sm font-bold text-foreground flex items-center gap-2">
-              <Sparkles className="w-4 h-4 text-[#C6A45A]" />
+              <Sparkles className="w-4 h-4 text-[#E84F12]" />
               <span>Muhaffiz Halaqah Notes</span>
             </h3>
             <p className="text-xs text-muted-foreground leading-relaxed bg-muted/40 p-3.5 rounded-lg border border-border">
@@ -397,7 +401,7 @@ export function StudentProfile({ studentId }: StudentProfileProps) {
           {/* Target pacing status */}
           <div className="bg-card text-card-foreground rounded-xl border border-border p-5 shadow-xs flex flex-col md:flex-row md:items-center justify-between gap-4">
             <div>
-              <span className="text-xs font-bold text-[#174D3A] dark:text-[#C6A45A] uppercase tracking-wider">
+              <span className="text-xs font-bold text-[#452D24] dark:text-[#E84F12] uppercase tracking-wider">
                 Current Curriculum Standing
               </span>
               <h3 className="text-lg font-bold text-foreground mt-0.5">
@@ -417,7 +421,7 @@ export function StudentProfile({ studentId }: StudentProfileProps) {
               </div>
               <div className="h-3 w-full bg-muted rounded-full overflow-hidden p-0.5 border border-border">
                 <div
-                  className="h-full bg-gradient-to-r from-[#174D3A] to-[#237A52] rounded-full"
+                  className="h-full bg-gradient-to-r from-[#452D24] to-[#C35A2F] rounded-full"
                   style={{ width: `${(student.currentJuz / 30) * 100}%` }}
                 />
               </div>
@@ -462,14 +466,14 @@ export function StudentProfile({ studentId }: StudentProfileProps) {
                     {memorisationRecords.map((m) => (
                       <tr key={m.id} className="hover:bg-muted/30">
                         <td className="py-3 px-4 font-medium text-foreground">{m.date}</td>
-                        <td className="py-3 px-4 font-bold text-[#174D3A] dark:text-[#C6A45A]">
+                        <td className="py-3 px-4 font-bold text-[#452D24] dark:text-[#E84F12]">
                           Juz {m.juzNumber}
                         </td>
                         <td className="py-3 px-4">
                           {m.surahStart} ({m.ayahStart}) - {m.surahEnd} ({m.ayahEnd})
                         </td>
                         <td className="py-3 px-4">
-                          <span className="px-2 py-0.5 rounded text-[11px] font-bold bg-emerald-500/10 text-emerald-800 dark:text-emerald-300">
+                          <span className="px-2 py-0.5 rounded text-[11px] font-bold bg-[#E84F12]/10 text-[#452D24] dark:text-[#E84F12]">
                             {m.grade}
                           </span>
                         </td>
@@ -504,14 +508,14 @@ export function StudentProfile({ studentId }: StudentProfileProps) {
                 {attendanceRecords.map((att) => (
                   <div key={att.id} className="py-3 flex items-center justify-between text-xs">
                     <div className="flex items-center gap-3">
-                      <div className="w-2 h-2 rounded-full bg-emerald-500" />
+                      <div className="w-2 h-2 rounded-full bg-[#E84F12]" />
                       <div>
                         <p className="font-semibold text-foreground">{att.session}</p>
                         <p className="text-[11px] text-muted-foreground">{att.date}</p>
                       </div>
                     </div>
                     <div className="text-right">
-                      <span className="px-2 py-0.5 rounded text-[11px] font-semibold uppercase bg-emerald-500/10 text-emerald-700 dark:text-emerald-300">
+                      <span className="px-2 py-0.5 rounded text-[11px] font-semibold uppercase bg-[#E84F12]/10 text-[#9B4123] dark:text-[#E84F12]">
                         {att.status}
                       </span>
                       {att.remarks && (
@@ -571,7 +575,7 @@ export function StudentProfile({ studentId }: StudentProfileProps) {
                       </p>
                     </div>
                     <div className="text-right">
-                      <span className="px-2 py-0.5 rounded text-[10px] font-bold uppercase bg-emerald-500/10 text-emerald-800 dark:text-emerald-300">
+                      <span className="px-2 py-0.5 rounded text-[10px] font-bold uppercase bg-[#E84F12]/10 text-[#452D24] dark:text-[#E84F12]">
                         {pay.status}
                       </span>
                       <p className="text-[11px] text-muted-foreground mt-0.5">{pay.date}</p>
@@ -593,7 +597,7 @@ export function StudentProfile({ studentId }: StudentProfileProps) {
 
           <div className="relative pl-6 space-y-6 before:absolute before:left-2 before:top-2 before:bottom-2 before:w-0.5 before:bg-border">
             <div className="relative">
-              <span className="absolute -left-6 top-1 w-2.5 h-2.5 rounded-full bg-[#174D3A] ring-4 ring-card" />
+              <span className="absolute -left-6 top-1 w-2.5 h-2.5 rounded-full bg-[#452D24] ring-4 ring-card" />
               <p className="text-xs font-bold text-foreground">
                 Admitted into Category {student.category}
               </p>
@@ -603,7 +607,7 @@ export function StudentProfile({ studentId }: StudentProfileProps) {
             </div>
 
             <div className="relative">
-              <span className="absolute -left-6 top-1 w-2.5 h-2.5 rounded-full bg-[#C6A45A] ring-4 ring-card" />
+              <span className="absolute -left-6 top-1 w-2.5 h-2.5 rounded-full bg-[#E84F12] ring-4 ring-card" />
               <p className="text-xs font-bold text-foreground">
                 Baseline Literacy Assessed
               </p>
@@ -613,7 +617,7 @@ export function StudentProfile({ studentId }: StudentProfileProps) {
             </div>
 
             <div className="relative">
-              <span className="absolute -left-6 top-1 w-2.5 h-2.5 rounded-full bg-emerald-500 ring-4 ring-card" />
+              <span className="absolute -left-6 top-1 w-2.5 h-2.5 rounded-full bg-[#E84F12] ring-4 ring-card" />
               <p className="text-xs font-bold text-foreground">
                 Current Level Active (Juz {student.currentJuz})
               </p>
@@ -743,7 +747,7 @@ export function StudentProfile({ studentId }: StudentProfileProps) {
               <button
                 type="button"
                 onClick={handleSaveEdit}
-                className="px-4 py-1.5 rounded-lg bg-[#174D3A] text-white text-xs font-semibold hover:bg-[#103729]"
+                className="px-4 py-1.5 rounded-lg bg-[#452D24] text-white text-xs font-semibold hover:bg-[#37231C]"
               >
                 Save Changes (Mock)
               </button>

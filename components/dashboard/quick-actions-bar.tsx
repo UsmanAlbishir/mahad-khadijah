@@ -54,15 +54,15 @@ export function QuickActionsBar() {
               href={act.href}
               className={`flex items-center gap-3 p-3 rounded-lg border transition-all duration-150 text-left group ${
                 act.primary
-                  ? "bg-[#174D3A] text-white border-[#174D3A] hover:bg-[#103729] shadow-xs"
-                  : "bg-muted/40 hover:bg-muted border-border hover:border-[#C6A45A]/50 text-foreground"
+                  ? "bg-[#452D24] text-white border-[#452D24] hover:bg-[#37231C] shadow-xs"
+                  : "bg-muted/40 hover:bg-muted border-border hover:border-[#E84F12]/50 text-foreground"
               }`}
             >
               <div
                 className={`p-2 rounded-md shrink-0 transition-transform group-hover:scale-105 ${
                   act.primary
-                    ? "bg-[#103729] text-[#C6A45A]"
-                    : "bg-background text-[#174D3A] dark:text-[#C6A45A] shadow-2xs"
+                    ? "bg-[#37231C] text-[#E84F12]"
+                    : "bg-background text-[#452D24] dark:text-[#E84F12] shadow-2xs"
                 }`}
               >
                 <Icon className="w-4 h-4" />
@@ -71,7 +71,7 @@ export function QuickActionsBar() {
                 <p className="text-xs font-bold truncate">{act.title}</p>
                 <p
                   className={`text-[11px] truncate ${
-                    act.primary ? "text-emerald-200/80" : "text-muted-foreground"
+                    act.primary ? "text-white/75" : "text-muted-foreground"
                   }`}
                 >
                   {act.subtitle}

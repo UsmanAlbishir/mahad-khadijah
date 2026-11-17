@@ -55,9 +55,9 @@ export default function MemorisationPage() {
           <button
             type="button"
             onClick={() => setShowLogModal(true)}
-            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#174D3A] text-white text-xs sm:text-sm font-bold hover:bg-[#103729] transition shadow-xs ring-1 ring-[#C6A45A]/30 shrink-0"
+            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#452D24] text-white text-xs sm:text-sm font-bold hover:bg-[#37231C] transition shadow-xs ring-1 ring-[#E84F12]/30 shrink-0"
           >
-            <Plus className="w-4 h-4 text-[#C6A45A]" />
+            <Plus className="w-4 h-4 text-[#E84F12]" />
             <span>Record Hifz Evaluation (Mock)</span>
           </button>
         </div>
@@ -70,10 +70,10 @@ export default function MemorisationPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="bg-card text-card-foreground rounded-xl border border-border p-5 shadow-xs space-y-2">
             <div className="flex items-center justify-between">
-              <span className="text-xs font-bold px-2 py-0.5 rounded bg-[#174D3A] text-white">
+              <span className="text-xs font-bold px-2 py-0.5 rounded bg-[#452D24] text-white">
                 Category A Track
               </span>
-              <span className="text-xs font-bold text-emerald-700 dark:text-emerald-300">
+              <span className="text-xs font-bold text-[#9B4123] dark:text-[#E84F12]">
                 1 Juz / Week Target
               </span>
             </div>
@@ -87,7 +87,7 @@ export default function MemorisationPage() {
 
           <div className="bg-card text-card-foreground rounded-xl border border-border p-5 shadow-xs space-y-2">
             <div className="flex items-center justify-between">
-              <span className="text-xs font-bold px-2 py-0.5 rounded bg-[#C6A45A] text-[#103729]">
+              <span className="text-xs font-bold px-2 py-0.5 rounded bg-[#E84F12] text-[#37231C]">
                 Category B Track
               </span>
               <span className="text-xs font-bold text-amber-700 dark:text-amber-300">
@@ -121,7 +121,7 @@ export default function MemorisationPage() {
                 type="button"
                 onClick={() => setSelectedCohort("A")}
                 className={`px-3 py-1 rounded-md font-semibold transition ${
-                  selectedCohort === "A" ? "bg-[#174D3A] text-white shadow-xs" : "text-muted-foreground"
+                  selectedCohort === "A" ? "bg-[#452D24] text-white shadow-xs" : "text-muted-foreground"
                 }`}
               >
                 Category A (5)
@@ -130,7 +130,7 @@ export default function MemorisationPage() {
                 type="button"
                 onClick={() => setSelectedCohort("B")}
                 className={`px-3 py-1 rounded-md font-semibold transition ${
-                  selectedCohort === "B" ? "bg-[#C6A45A] text-[#103729] shadow-xs" : "text-muted-foreground"
+                  selectedCohort === "B" ? "bg-[#E84F12] text-[#37231C] shadow-xs" : "text-muted-foreground"
                 }`}
               >
                 Category B (5)
@@ -153,7 +153,7 @@ export default function MemorisationPage() {
                 </div>
                 <span
                   className={`text-[10px] font-bold px-2 py-0.5 rounded ${
-                    st.category === "A" ? "bg-[#174D3A] text-white" : "bg-[#C6A45A] text-[#103729]"
+                    st.category === "A" ? "bg-[#452D24] text-white" : "bg-[#E84F12] text-[#37231C]"
                   }`}
                 >
                   Cat {st.category}
@@ -163,11 +163,11 @@ export default function MemorisationPage() {
               <div className="space-y-1.5">
                 <div className="flex justify-between text-xs font-semibold">
                   <span>Current Level:</span>
-                  <span className="text-[#174D3A] dark:text-[#C6A45A]">Juz {st.currentJuz} / 30</span>
+                  <span className="text-[#452D24] dark:text-[#E84F12]">Juz {st.currentJuz} / 30</span>
                 </div>
                 <div className="h-2.5 w-full bg-muted rounded-full overflow-hidden p-0.5 border border-border/40">
                   <div
-                    className="h-full bg-gradient-to-r from-[#174D3A] to-[#237A52] rounded-full"
+                    className="h-full bg-gradient-to-r from-[#452D24] to-[#C35A2F] rounded-full"
                     style={{ width: `${(st.currentJuz / 30) * 100}%` }}
                   />
                 </div>
@@ -183,7 +183,7 @@ export default function MemorisationPage() {
                 </span>
                 <a
                   href={`/students/${st.id}`}
-                  className="text-xs font-semibold text-[#174D3A] dark:text-[#C6A45A] hover:underline"
+                  className="text-xs font-semibold text-[#452D24] dark:text-[#E84F12] hover:underline"
                 >
                   View Hifz Log
                 </a>
@@ -297,7 +297,7 @@ export default function MemorisationPage() {
                   </button>
                   <button
                     type="submit"
-                    className="px-4 py-1.5 rounded-lg bg-[#174D3A] text-white text-xs font-semibold hover:bg-[#103729]"
+                    className="px-4 py-1.5 rounded-lg bg-[#452D24] text-white text-xs font-semibold hover:bg-[#37231C]"
                   >
                     Save Evaluation (Mock)
                   </button>

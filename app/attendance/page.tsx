@@ -65,9 +65,9 @@ export default function AttendancePage() {
           <button
             type="button"
             onClick={handleSave}
-            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#174D3A] text-white text-xs sm:text-sm font-bold hover:bg-[#103729] transition shadow-xs ring-1 ring-[#C6A45A]/30 shrink-0"
+            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#452D24] text-white text-xs sm:text-sm font-bold hover:bg-[#37231C] transition shadow-xs ring-1 ring-[#E84F12]/30 shrink-0"
           >
-            <Save className="w-4 h-4 text-[#C6A45A]" />
+            <Save className="w-4 h-4 text-[#E84F12]" />
             <span>Save Attendance (Mock)</span>
           </button>
         </div>
@@ -106,7 +106,7 @@ export default function AttendancePage() {
           </div>
 
           <div className="flex items-center gap-3 pt-4 sm:pt-0 sm:justify-end text-xs">
-            <span className="font-semibold text-emerald-700 dark:text-emerald-300">
+            <span className="font-semibold text-[#9B4123] dark:text-[#E84F12]">
               {counts.present} Present
             </span>
             <span>•</span>
@@ -152,8 +152,8 @@ export default function AttendancePage() {
                         <span
                           className={`px-2 py-0.5 rounded text-[10px] font-bold ${
                             st.category === "A"
-                              ? "bg-[#174D3A] text-white"
-                              : "bg-[#C6A45A] text-[#103729]"
+                              ? "bg-[#452D24] text-white"
+                              : "bg-[#E84F12] text-[#37231C]"
                           }`}
                         >
                           Category {st.category}
@@ -166,7 +166,7 @@ export default function AttendancePage() {
                         <span
                           className={`px-2 py-0.5 rounded text-[11px] font-semibold uppercase ${
                             currentStatus === "present"
-                              ? "bg-emerald-500/10 text-emerald-800 dark:text-emerald-300"
+                              ? "bg-[#E84F12]/10 text-[#452D24] dark:text-[#E84F12]"
                               : currentStatus === "late"
                               ? "bg-amber-500/10 text-amber-800 dark:text-amber-300"
                               : currentStatus === "excused"
@@ -184,7 +184,7 @@ export default function AttendancePage() {
                             onClick={() => setStatus(st.id, "present")}
                             className={`px-2 py-1 rounded text-[10px] font-semibold transition ${
                               currentStatus === "present"
-                                ? "bg-emerald-600 text-white"
+                                ? "bg-[#C35A2F] text-white"
                                 : "bg-muted text-foreground hover:bg-muted/80"
                             }`}
                           >

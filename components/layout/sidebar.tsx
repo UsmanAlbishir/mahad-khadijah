@@ -96,10 +96,10 @@ export function Sidebar({ onItemClick, className = "" }: SidebarProps) {
 
   return (
     <aside
-      className={`flex flex-col h-full bg-[#103729] text-white border-r border-[#174D3A] shadow-xl select-none ${className}`}
+      className={`flex h-full flex-col border-r border-[#5C382B] bg-[#452D24] text-white shadow-xl select-none ${className}`}
     >
       {/* Brand Header */}
-      <div className="p-5 border-b border-[#174D3A] flex items-center justify-between">
+      <div className="flex items-center justify-between border-b border-white/10 p-5">
         <SchoolHeaderLogo variant="sidebar" />
       </div>
 
@@ -107,7 +107,7 @@ export function Sidebar({ onItemClick, className = "" }: SidebarProps) {
       <div className="flex-1 overflow-y-auto px-3 py-4 space-y-6 scrollbar-thin">
         {/* Core & Academic Group */}
         <div>
-          <div className="px-3 pb-2 text-[10px] uppercase font-bold tracking-wider text-[#C6A45A]/90">
+          <div className="px-3 pb-2 text-[10px] font-bold uppercase tracking-wider text-white/50">
             Main Management
           </div>
           <nav className="space-y-1">
@@ -125,19 +125,19 @@ export function Sidebar({ onItemClick, className = "" }: SidebarProps) {
                   onClick={onItemClick}
                   className={`group relative flex items-center justify-between px-3 py-2.5 rounded-lg text-sm font-medium transition-all duration-150 ${
                     isActive
-                      ? "bg-[#174D3A] text-white font-semibold shadow-xs ring-1 ring-[#C6A45A]/40"
-                      : "text-emerald-100/75 hover:bg-[#174D3A]/50 hover:text-white"
+                      ? "bg-white/10 text-white font-semibold shadow-xs ring-1 ring-[#E84F12]/60"
+                      : "text-white/70 hover:bg-white/10 hover:text-white"
                   }`}
                 >
                   {/* Left accent bar for active item */}
                   {isActive && (
-                    <span className="absolute left-0 top-1.5 bottom-1.5 w-1 rounded-r bg-[#C6A45A]" />
+                    <span className="absolute bottom-1.5 left-0 top-1.5 w-1 rounded-r bg-[#E84F12]" />
                   )}
 
                   <div className="flex items-center gap-3 min-w-0">
                     <Icon
                       className={`w-4 h-4 shrink-0 transition-transform group-hover:scale-110 ${
-                        isActive ? "text-[#C6A45A]" : "text-emerald-200/60"
+                        isActive ? "text-[#E84F12]" : "text-white/50"
                       }`}
                     />
                     <span className="truncate">{item.title}</span>
@@ -147,8 +147,8 @@ export function Sidebar({ onItemClick, className = "" }: SidebarProps) {
                     <span
                       className={`text-[10px] font-semibold px-2 py-0.5 rounded-full ${
                         isActive
-                          ? "bg-[#C6A45A] text-[#103729]"
-                          : "bg-[#174D3A] text-emerald-200/80 border border-emerald-600/30"
+                          ? "bg-[#E84F12] text-white"
+                          : "border border-white/10 bg-white/10 text-white/70"
                       }`}
                     >
                       {item.badge}
@@ -162,7 +162,7 @@ export function Sidebar({ onItemClick, className = "" }: SidebarProps) {
 
         {/* Administration Group */}
         <div>
-          <div className="px-3 pb-2 text-[10px] uppercase font-bold tracking-wider text-[#C6A45A]/90">
+          <div className="px-3 pb-2 text-[10px] font-bold uppercase tracking-wider text-white/50">
             Administration & Records
           </div>
           <nav className="space-y-1">
@@ -177,18 +177,18 @@ export function Sidebar({ onItemClick, className = "" }: SidebarProps) {
                   onClick={onItemClick}
                   className={`group relative flex items-center justify-between px-3 py-2.5 rounded-lg text-sm font-medium transition-all duration-150 ${
                     isActive
-                      ? "bg-[#174D3A] text-white font-semibold shadow-xs ring-1 ring-[#C6A45A]/40"
-                      : "text-emerald-100/75 hover:bg-[#174D3A]/50 hover:text-white"
+                      ? "bg-white/10 text-white font-semibold shadow-xs ring-1 ring-[#E84F12]/60"
+                      : "text-white/70 hover:bg-white/10 hover:text-white"
                   }`}
                 >
                   {isActive && (
-                    <span className="absolute left-0 top-1.5 bottom-1.5 w-1 rounded-r bg-[#C6A45A]" />
+                    <span className="absolute bottom-1.5 left-0 top-1.5 w-1 rounded-r bg-[#E84F12]" />
                   )}
 
                   <div className="flex items-center gap-3 min-w-0">
                     <Icon
                       className={`w-4 h-4 shrink-0 transition-transform group-hover:scale-110 ${
-                        isActive ? "text-[#C6A45A]" : "text-emerald-200/60"
+                        isActive ? "text-[#E84F12]" : "text-white/50"
                       }`}
                     />
                     <span className="truncate">{item.title}</span>
@@ -196,7 +196,7 @@ export function Sidebar({ onItemClick, className = "" }: SidebarProps) {
 
                   <ChevronRight
                     className={`w-3.5 h-3.5 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all ${
-                      isActive ? "text-[#C6A45A]" : "text-emerald-300/40"
+                      isActive ? "text-[#E84F12]" : "text-white/35"
                     }`}
                   />
                 </Link>
@@ -207,17 +207,17 @@ export function Sidebar({ onItemClick, className = "" }: SidebarProps) {
       </div>
 
       {/* Academy Session & Status Footer */}
-      <div className="p-4 border-t border-[#174D3A] bg-[#0c2a1f]">
-        <div className="flex items-center gap-2.5 text-xs text-emerald-100/80 mb-2">
-          <ShieldCheck className="w-4 h-4 text-[#C6A45A] shrink-0" />
+      <div className="border-t border-white/10 bg-[#37231C] p-4">
+        <div className="mb-2 flex items-center gap-2.5 text-xs text-white/75">
+          <ShieldCheck className="w-4 h-4 shrink-0 text-[#E84F12]" />
           <div className="truncate">
             <p className="font-semibold text-white">2025/2026 Session</p>
-            <p className="text-[11px] text-emerald-300/70">Term 1 • Week 7</p>
+            <p className="text-[11px] text-white/55">Term 1 • Week 7</p>
           </div>
         </div>
-        <div className="pt-2 border-t border-[#174D3A]/60 flex items-center justify-between text-[11px] text-emerald-300/60">
+        <div className="flex items-center justify-between border-t border-white/10 pt-2 text-[11px] text-white/45">
           <span>Prototype v1.0</span>
-          <span className="text-[#C6A45A] font-semibold">Madad SMS</span>
+          <span className="font-semibold text-[#E84F12]">Ma&apos;had SMS</span>
         </div>
       </div>
     </aside>

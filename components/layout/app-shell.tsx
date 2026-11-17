@@ -34,12 +34,12 @@ export function AppShell({ children }: AppShellProps) {
             />
 
             {/* Slide-over Drawer */}
-            <div className="fixed inset-y-0 left-0 w-72 max-w-[85vw] bg-[#103729] shadow-2xl z-50 flex flex-col animate-in slide-in-from-left duration-200">
+            <div className="fixed inset-y-0 left-0 z-50 flex w-72 max-w-[85vw] flex-col bg-[#452D24] shadow-2xl animate-in slide-in-from-left duration-200">
               <div className="absolute top-4 right-3 z-10">
                 <button
                   type="button"
                   onClick={() => setMobileNavOpen(false)}
-                  className="p-1.5 rounded-lg text-emerald-200 hover:text-white hover:bg-[#174D3A] transition"
+                  className="rounded-lg p-1.5 text-white/70 transition hover:bg-white/10 hover:text-white"
                   aria-label="Close navigation"
                 >
                   <X className="w-5 h-5" />

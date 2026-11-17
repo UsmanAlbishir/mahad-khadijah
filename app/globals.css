@@ -1,55 +1,77 @@
+/* Prefer local Geist font if available, otherwise use system font stack */
+@font-face {
+  font-family: 'Geist';
+  src: local('Geist'), local('Geist-Regular'),
+    url('/fonts/Geist-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Geist';
+  src: local('Geist'), local('Geist-Bold'),
+    url('/fonts/Geist-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+html {
+  font-family: 'Geist', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 45 35% 97%; /* #F9F7F1 - Warm clean parchment */
-    --foreground: 154 17% 17%; /* #24332C - Dark slate forest primary text */
+    --background: 30 33% 97%; /* #FAF7F4 - Warm Ivory */
+    --foreground: 18 33% 21%; /* #452D24 - Dark Brown */
     --card: 0 0% 100%;
-    --card-foreground: 154 17% 17%;
+    --card-foreground: 18 33% 21%;
     --popover: 0 0% 100%;
-    --popover-foreground: 154 17% 17%;
-    --primary: 159 54% 20%; /* #174D3A - Forest Green */
-    --primary-foreground: 45 42% 97%;
-    --secondary: 45 35% 93%; /* #F1ECE0 */
-    --secondary-foreground: 159 54% 15%;
-    --muted: 45 20% 94%;
-    --muted-foreground: 147 8% 45%; /* #6B7B71 */
-    --accent: 41 51% 56%; /* #C6A45A - Soft Gold */
-    --accent-foreground: 154 17% 17%;
+    --popover-foreground: 18 33% 21%;
+    --primary: 17 86% 49%; /* #E84F12 - Primary Orange */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 18 29% 94%;
+    --secondary-foreground: 18 33% 21%;
+    --muted: 24 23% 94%;
+    --muted-foreground: 17 18% 42%;
+    --accent: 17 59% 48%; /* #C35A2F - Terracotta */
+    --accent-foreground: 0 0% 100%;
     --destructive: 2 57% 46%; /* #B93832 */
     --destructive-foreground: 0 0% 98%;
     --border: 45 15% 88%;
     --input: 45 15% 88%;
-    --ring: 159 54% 20%;
-    --chart-1: 159 54% 20%;
-    --chart-2: 41 51% 56%;
-    --chart-3: 154 55% 31%;
-    --chart-4: 39 75% 38%;
+    --ring: 17 86% 49%;
+    --chart-1: 17 86% 49%;
+    --chart-2: 17 59% 48%;
+    --chart-3: 18 33% 21%;
+    --chart-4: 24 62% 55%;
     --chart-5: 2 57% 46%;
     --radius: 0.625rem;
   }
   .dark {
-    --background: 160 55% 6%; /* #071912 Deep nighttime forest */
-    --foreground: 45 30% 94%;
-    --card: 160 55% 9%;
-    --card-foreground: 45 30% 94%;
-    --popover: 160 55% 9%;
-    --popover-foreground: 45 30% 94%;
-    --primary: 41 51% 56%; /* Soft gold in dark mode */
-    --primary-foreground: 160 55% 8%;
-    --secondary: 160 40% 14%;
-    --secondary-foreground: 45 30% 94%;
-    --muted: 160 40% 14%;
-    --muted-foreground: 147 15% 65%;
-    --accent: 159 54% 25%;
-    --accent-foreground: 45 30% 94%;
+    --background: 18 33% 11%;
+    --foreground: 30 33% 96%;
+    --card: 18 29% 15%;
+    --card-foreground: 30 33% 96%;
+    --popover: 18 29% 15%;
+    --popover-foreground: 30 33% 96%;
+    --primary: 17 86% 55%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 18 20% 21%;
+    --secondary-foreground: 30 33% 96%;
+    --muted: 18 20% 21%;
+    --muted-foreground: 24 15% 70%;
+    --accent: 17 59% 55%;
+    --accent-foreground: 0 0% 100%;
     --destructive: 2 62% 45%;
     --destructive-foreground: 0 0% 98%;
-    --border: 160 30% 18%;
-    --input: 160 30% 18%;
-    --ring: 41 51% 56%;
+    --border: 18 20% 27%;
+    --input: 18 20% 27%;
+    --ring: 17 86% 55%;
   }
 }
 
@@ -65,11 +87,32 @@
 
 /* Subtle Islamic geometric micro-pattern helper */
 .bg-islamic-pattern {
-  background-image: radial-gradient(circle at 1px 1px, rgba(198, 164, 90, 0.12) 1px, transparent 0);
+  background-image: radial-gradient(circle at 1px 1px, rgba(232, 79, 18, 0.1) 1px, transparent 0);
   background-size: 24px 24px;
 }
 
 .bg-islamic-pattern-dark {
-  background-image: radial-gradient(circle at 1px 1px, rgba(198, 164, 90, 0.08) 1px, transparent 0);
+  background-image: radial-gradient(circle at 1px 1px, rgba(232, 79, 18, 0.08) 1px, transparent 0);
   background-size: 24px 24px;
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  .report-print-view,
+  .report-print-view * {
+    visibility: visible;
+  }
+
+  .report-print-view {
+    position: absolute !important;
+    inset: 0 auto auto 0 !important;
+    width: 100% !important;
+    max-height: none !important;
+    overflow: visible !important;
+    border: 0 !important;
+    box-shadow: none !important;
+  }
 }

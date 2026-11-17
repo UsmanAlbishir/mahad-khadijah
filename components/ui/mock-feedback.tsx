@@ -19,13 +19,13 @@ export function MockFeedback({ notice, onClose }: MockFeedbackProps) {
   if (!notice) return null;
 
   const icons = {
-    success: <CheckCircle2 className="w-5 h-5 text-emerald-600 dark:text-emerald-400 shrink-0" />,
+    success: <CheckCircle2 className="w-5 h-5 text-[#C35A2F] dark:text-[#E84F12] shrink-0" />,
     warning: <AlertCircle className="w-5 h-5 text-amber-600 dark:text-amber-400 shrink-0" />,
     info: <Info className="w-5 h-5 text-blue-600 dark:text-blue-400 shrink-0" />,
   };
 
   const borders = {
-    success: "border-emerald-500/30 bg-emerald-50/80 dark:bg-emerald-950/40 text-emerald-950 dark:text-emerald-100",
+    success: "border-[#E84F12]/30 bg-[#FAF7F4] dark:bg-[#452D24]/30 text-[#452D24] dark:text-[#FAF7F4]",
     warning: "border-amber-500/30 bg-amber-50/80 dark:bg-amber-950/40 text-amber-950 dark:text-amber-100",
     info: "border-blue-500/30 bg-blue-50/80 dark:bg-blue-950/40 text-blue-950 dark:text-blue-100",
   };

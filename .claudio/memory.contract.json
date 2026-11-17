@@ -1,0 +1,338 @@
+{
+  "version": "1",
+  "workspaceId": "1842bea0dd7f3cad",
+  "workspaceName": "mahad-khadijah",
+  "enabled": true,
+  "updatedAt": "2026-11-17T11:51:14.600Z",
+  "detectedStack": {
+    "languages": [
+      "JavaScript/TypeScript"
+    ],
+    "frameworks": [
+      "Next.js",
+      "React"
+    ],
+    "packageManager": "npm",
+    "uiLibraries": [
+      "Tailwind",
+      "lucide-react"
+    ],
+    "orm": [],
+    "authLibraries": [],
+    "validationLibraries": [],
+    "paymentLibraries": [],
+    "testTools": [],
+    "scripts": {
+      "dev": "next dev",
+      "build": "next build",
+      "start": "next start",
+      "lint": "eslint ."
+    },
+    "importantDirs": [
+      "app",
+      "components",
+      "lib"
+    ],
+    "sensitiveFiles": [
+      "app/dashboard/page.tsx",
+      "app/payments/page.tsx",
+      "app/sessions/page.tsx",
+      "app/teacher/dashboard/page.tsx",
+      "components/dashboard/dashboard-metrics-cards.tsx",
+      "components/dashboard/memorisation-progress-card.tsx",
+      "components/dashboard/quick-actions-bar.tsx",
+      "components/dashboard/recent-activity-card.tsx"
+    ]
+  },
+  "sections": {
+    "stack": [
+      {
+        "id": "6914fef350d386a3",
+        "text": "Framework detected: Next.js.",
+        "kind": "fact",
+        "source": "repo_detected",
+        "confidence": "confirmed",
+        "scope": "workspace",
+        "evidence": {
+          "file": "package.json"
+        },
+        "lastVerifiedAt": "2026-11-17T11:51:14.598Z"
+      },
+      {
+        "id": "01d2e80f881b1ed4",
+        "text": "Framework detected: React.",
+        "kind": "fact",
+        "source": "repo_detected",
+        "confidence": "confirmed",
+        "scope": "workspace",
+        "evidence": {
+          "file": "package.json"
+        },
+        "lastVerifiedAt": "2026-11-17T11:51:14.600Z"
+      }
+    ],
+    "packageManager": [],
+    "architectureRules": [],
+    "codingConventions": [],
+    "sensitiveFiles": [
+      {
+        "id": "f9492913219edbc3",
+        "text": "Environment file: .env.example",
+        "kind": "risk",
+        "source": "repo_detected",
+        "confidence": "confirmed",
+        "scope": "workspace",
+        "evidence": {
+          "file": ".env.example"
+        },
+        "lastVerifiedAt": "2026-11-02T21:17:25.026Z"
+      },
+      {
+        "id": "df68479b40de14b4",
+        "text": "Auth code: app/auth/confirm/route.ts",
+        "kind": "risk",
+        "source": "repo_detected",
+        "confidence": "confirmed",
+        "scope": "workspace",
+        "evidence": {
+          "file": "app/auth/confirm/route.ts"
+        },
+        "lastVerifiedAt": "2026-11-02T21:17:25.026Z"
+      },
+      {
+        "id": "e8490ad7e854979f",
+        "text": "Auth code: app/auth/error/page.tsx",
+        "kind": "risk",
+        "source": "repo_detected",
+        "confidence": "confirmed",
+        "scope": "workspace",
+        "evidence": {
+          "file": "app/auth/error/page.tsx"
+        },
+        "lastVerifiedAt": "2026-11-02T21:17:25.026Z"
+      },
+      {
+        "id": "4e38dc6c08f9169d",
+        "text": "Auth code: app/auth/forgot-password/page.tsx",
+        "kind": "risk",
+        "source": "repo_detected",
+        "confidence": "confirmed",
+        "scope": "workspace",
+        "evidence": {
+          "file": "app/auth/forgot-password/page.tsx"
+        },
+        "lastVerifiedAt": "2026-11-02T21:17:25.026Z"
+      },
+      {
+        "id": "4ded4ccfe3a5c34d",
+        "text": "Auth code: app/auth/login/page.tsx",
+        "kind": "risk",
+        "source": "repo_detected",
+        "confidence": "confirmed",
+        "scope": "workspace",
+        "evidence": {
+          "file": "app/auth/login/page.tsx"
+        },
+        "lastVerifiedAt": "2026-11-02T21:17:25.027Z"
+      },
+      {
+        "id": "16445b38aedb229f",
+        "text": "Auth code: app/auth/sign-up/page.tsx",
+        "kind": "risk",
+        "source": "repo_detected",
+        "confidence": "confirmed",
+        "scope": "workspace",
+        "evidence": {
+          "file": "app/auth/sign-up/page.tsx"
+        },
+        "lastVerifiedAt": "2026-11-02T21:17:25.027Z"
+      },
+      {
+        "id": "a00ed1961e78dbdb",
+        "text": "Auth code: app/auth/sign-up-success/page.tsx",
+        "kind": "risk",
+        "source": "repo_detected",
+        "confidence": "confirmed",
+        "scope": "workspace",
+        "evidence": {
+          "file": "app/auth/sign-up-success/page.tsx"
+        },
+        "lastVerifiedAt": "2026-11-02T21:17:25.027Z"
+      },
+      {
+        "id": "7ade238d3f90d139",
+        "text": "Auth code: app/auth/update-password/page.tsx",
+        "kind": "risk",
+        "source": "repo_detected",
+        "confidence": "confirmed",
+        "scope": "workspace",
+        "evidence": {
+          "file": "app/auth/update-password/page.tsx"
+        },
+        "lastVerifiedAt": "2026-11-02T21:17:25.027Z"
+      },
+      {
+        "id": "f50911187dce919f",
+        "text": "Dashboard area: app/dashboard/page.tsx",
+        "kind": "risk",
+        "source": "repo_detected",
+        "confidence": "confirmed",
+        "scope": "workspace",
+        "evidence": {
+          "file": "app/dashboard/page.tsx"
+        },
+        "lastVerifiedAt": "2026-11-17T11:51:14.600Z"
+      },
+      {
+        "id": "023b8f81605e4034",
+        "text": "Payments flow: app/payments/page.tsx",
+        "kind": "risk",
+        "source": "repo_detected",
+        "confidence": "confirmed",
+        "scope": "workspace",
+        "evidence": {
+          "file": "app/payments/page.tsx"
+        },
+        "lastVerifiedAt": "2026-11-17T11:51:14.600Z"
+      },
+      {
+        "id": "df916f5e3cd0de9f",
+        "text": "Session handling: app/sessions/page.tsx",
+        "kind": "risk",
+        "source": "repo_detected",
+        "confidence": "confirmed",
+        "scope": "workspace",
+        "evidence": {
+          "file": "app/sessions/page.tsx"
+        },
+        "lastVerifiedAt": "2026-11-17T11:51:14.600Z"
+      },
+      {
+        "id": "04137cfc252e078e",
+        "text": "Dashboard area: components/dashboard/dashboard-metrics-cards.tsx",
+        "kind": "risk",
+        "source": "repo_detected",
+        "confidence": "confirmed",
+        "scope": "workspace",
+        "evidence": {
+          "file": "components/dashboard/dashboard-metrics-cards.tsx"
+        },
+        "lastVerifiedAt": "2026-11-17T11:51:14.600Z"
+      },
+      {
+        "id": "c852b82f5bb55fae",
+        "text": "Dashboard area: components/dashboard/memorisation-progress-card.tsx",
+        "kind": "risk",
+        "source": "repo_detected",
+        "confidence": "confirmed",
+        "scope": "workspace",
+        "evidence": {
+          "file": "components/dashboard/memorisation-progress-card.tsx"
+        },
+        "lastVerifiedAt": "2026-11-17T11:51:14.600Z"
+      },
+      {
+        "id": "aa2e9ca3eaae2e40",
+        "text": "Dashboard area: components/dashboard/quick-actions-bar.tsx",
+        "kind": "risk",
+        "source": "repo_detected",
+        "confidence": "confirmed",
+        "scope": "workspace",
+        "evidence": {
+          "file": "components/dashboard/quick-actions-bar.tsx"
+        },
+        "lastVerifiedAt": "2026-11-17T11:51:14.600Z"
+      },
+      {
+        "id": "78eba274c04240af",
+        "text": "Dashboard area: components/dashboard/recent-activity-card.tsx",
+        "kind": "risk",
+        "source": "repo_detected",
+        "confidence": "confirmed",
+        "scope": "workspace",
+        "evidence": {
+          "file": "components/dashboard/recent-activity-card.tsx"
+        },
+        "lastVerifiedAt": "2026-11-17T11:51:14.600Z"
+      },
+      {
+        "id": "25938c054da61a42",
+        "text": "Dashboard area: app/teacher/dashboard/page.tsx",
+        "kind": "risk",
+        "source": "repo_detected",
+        "confidence": "confirmed",
+        "scope": "workspace",
+        "evidence": {
+          "file": "app/teacher/dashboard/page.tsx"
+        },
+        "lastVerifiedAt": "2026-11-17T11:51:14.600Z"
+      }
+    ],
+    "forbiddenActions": [
+      {
+        "id": "952af7d8674f021d",
+        "text": "Never log or commit values for env names: NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY.",
+        "kind": "constraint",
+        "source": "repo_detected",
+        "confidence": "confirmed",
+        "scope": "workspace",
+        "lastVerifiedAt": "2026-11-02T21:17:25.027Z"
+      }
+    ],
+    "allowedCommands": [
+      {
+        "id": "dafd0dbdd128e93f",
+        "text": "npm run dev -> next dev",
+        "kind": "command",
+        "source": "repo_detected",
+        "confidence": "confirmed",
+        "scope": "workspace",
+        "evidence": {
+          "file": "package.json"
+        },
+        "lastVerifiedAt": "2026-11-17T11:51:14.600Z"
+      },
+      {
+        "id": "935dba6652533a20",
+        "text": "npm run build -> next build",
+        "kind": "command",
+        "source": "repo_detected",
+        "confidence": "confirmed",
+        "scope": "workspace",
+        "evidence": {
+          "file": "package.json"
+        },
+        "lastVerifiedAt": "2026-11-17T11:51:14.600Z"
+      },
+      {
+        "id": "36baac0f981c9508",
+        "text": "npm run start -> next start",
+        "kind": "command",
+        "source": "repo_detected",
+        "confidence": "confirmed",
+        "scope": "workspace",
+        "evidence": {
+          "file": "package.json"
+        },
+        "lastVerifiedAt": "2026-11-17T11:51:14.600Z"
+      },
+      {
+        "id": "80cdfffbb2da935f",
+        "text": "npm run lint -> eslint .",
+        "kind": "command",
+        "source": "repo_detected",
+        "confidence": "confirmed",
+        "scope": "workspace",
+        "evidence": {
+          "file": "package.json"
+        },
+        "lastVerifiedAt": "2026-11-17T11:51:14.600Z"
+      }
+    ],
+    "businessRules": [],
+    "integrationRules": [],
+    "testingExpectations": [],
+    "agentInstructions": [],
+    "openQuestions": []
+  }
+}

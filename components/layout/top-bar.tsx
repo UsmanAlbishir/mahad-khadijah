@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
   Menu,
@@ -54,6 +55,18 @@ export function TopBar({ onToggleMobileNav }: TopBarProps) {
     if (pathname === "/reports") {
       return { title: "Academic & Memorisation Reports", section: "Reports" };
     }
+    if (pathname.startsWith("/reports/weekly")) {
+      return { title: "Weekly Reports", section: "Reports & Analytics" };
+    }
+    if (pathname.startsWith("/reports/monthly")) {
+      return { title: "Monthly Reports", section: "Reports & Analytics" };
+    }
+    if (pathname.startsWith("/reports/musafa")) {
+      return { title: "Musafa Assessment Reports", section: "Reports & Analytics" };
+    }
+    if (pathname.startsWith("/reports/teachers")) {
+      return { title: "Teacher Performance Reports", section: "Reports & Analytics" };
+    }
     if (pathname === "/settings") {
       return { title: "System Settings", section: "Configuration" };
     }
@@ -77,9 +90,9 @@ export function TopBar({ onToggleMobileNav }: TopBarProps) {
 
         <div className="flex flex-col">
           <div className="hidden sm:flex items-center gap-1.5 text-xs text-muted-foreground font-medium">
-            <span>Madad Khadijah</span>
+            <span>Ma&apos;had Khadijah</span>
             <span>/</span>
-            <span className="text-[#174D3A] dark:text-[#C6A45A] font-semibold">
+            <span className="font-semibold text-[#9B4123] dark:text-[#E84F12]">
               {section}
             </span>
           </div>
@@ -95,8 +108,8 @@ export function TopBar({ onToggleMobileNav }: TopBarProps) {
         <DemoBadge />
 
         {/* Term Pill (Desktop) */}
-        <div className="hidden xl:flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-[#F7F3E8] dark:bg-muted border border-[#C6A45A]/30 text-xs text-[#103729] dark:text-foreground font-medium">
-          <Calendar className="w-3.5 h-3.5 text-[#C6A45A]" />
+        <div className="hidden items-center gap-1.5 rounded-md border border-[#E84F12]/25 bg-[#FAF7F4] px-2.5 py-1 text-xs font-medium text-[#452D24] dark:bg-muted dark:text-foreground xl:flex">
+          <Calendar className="h-3.5 w-3.5 text-[#E84F12]" />
           <span>2025/2026 • First Term</span>
         </div>
 
@@ -109,7 +122,7 @@ export function TopBar({ onToggleMobileNav }: TopBarProps) {
             aria-label="View notifications"
           >
             <Bell className="w-4 h-4" />
-            <span className="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-[#C6A45A]" />
+            <span className="absolute right-1.5 top-1.5 h-2 w-2 rounded-full bg-[#E84F12]" />
           </button>
 
           {showNotifications && (
@@ -149,7 +162,7 @@ export function TopBar({ onToggleMobileNav }: TopBarProps) {
             onClick={() => setShowUserMenu(!showUserMenu)}
             className="flex items-center gap-2 p-1.5 rounded-lg hover:bg-muted transition border border-transparent hover:border-border"
           >
-            <div className="w-8 h-8 rounded-full bg-[#174D3A] text-white flex items-center justify-center font-bold text-xs ring-2 ring-[#C6A45A]/40">
+            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#452D24] text-xs font-bold text-white ring-2 ring-[#E84F12]/35">
               MK
             </div>
             <div className="hidden md:flex flex-col text-left">
@@ -172,7 +185,7 @@ export function TopBar({ onToggleMobileNav }: TopBarProps) {
                 <p className="text-[11px] text-muted-foreground">
                   admin@madadkhadijah.sch.ng
                 </p>
-                <span className="inline-block mt-1 text-[10px] px-1.5 py-0.5 rounded bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 font-medium">
+                <span className="inline-block mt-1 text-[10px] px-1.5 py-0.5 rounded bg-[#E84F12]/10 text-[#9B4123] dark:text-[#E84F12] font-medium">
                   Active Demo Session
                 </span>
               </div>
@@ -183,12 +196,12 @@ export function TopBar({ onToggleMobileNav }: TopBarProps) {
                 >
                   Account Settings
                 </a>
-                <a
+                <Link
                   href="/reports"
                   className="block px-3 py-1.5 rounded-md hover:bg-muted text-foreground transition"
                 >
                   School Reports
-                </a>
+                </Link>
               </div>
             </div>
           )}

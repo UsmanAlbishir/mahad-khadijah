@@ -76,9 +76,9 @@ export default function PaymentsPage() {
           <button
             type="button"
             onClick={() => setShowPayModal(true)}
-            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#174D3A] text-white text-xs sm:text-sm font-bold hover:bg-[#103729] transition shadow-xs ring-1 ring-[#C6A45A]/30 shrink-0"
+            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#452D24] text-white text-xs sm:text-sm font-bold hover:bg-[#37231C] transition shadow-xs ring-1 ring-[#E84F12]/30 shrink-0"
           >
-            <Plus className="w-4 h-4 text-[#C6A45A]" />
+            <Plus className="w-4 h-4 text-[#E84F12]" />
             <span>Record Payment Receipt (Mock)</span>
           </button>
         </div>
@@ -103,7 +103,7 @@ export default function PaymentsPage() {
             <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
               Issued Receipts Count
             </span>
-            <h3 className="text-2xl font-extrabold text-[#174D3A] dark:text-[#C6A45A] mt-1.5 font-serif">
+            <h3 className="text-2xl font-extrabold text-[#452D24] dark:text-[#E84F12] mt-1.5 font-serif">
               {payments.length} Receipts
             </h3>
             <p className="text-xs text-muted-foreground mt-1">100% verified by bursary</p>
@@ -163,7 +163,7 @@ export default function PaymentsPage() {
               <tbody className="divide-y divide-border">
                 {filtered.map((pay) => (
                   <tr key={pay.id} className="hover:bg-muted/30 transition">
-                    <td className="py-3.5 px-4 font-mono font-bold text-[#174D3A] dark:text-[#C6A45A]">
+                    <td className="py-3.5 px-4 font-mono font-bold text-[#452D24] dark:text-[#E84F12]">
                       {pay.reference}
                     </td>
                     <td className="py-3.5 px-4">
@@ -179,7 +179,7 @@ export default function PaymentsPage() {
                     <td className="py-3.5 px-4 text-muted-foreground">{pay.date}</td>
                     <td className="py-3.5 px-4 text-foreground/80 max-w-xs truncate">{pay.description}</td>
                     <td className="py-3.5 px-4">
-                      <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-500/10 text-emerald-800 dark:text-emerald-300">
+                      <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-[#E84F12]/10 text-[#452D24] dark:text-[#E84F12]">
                         <CheckCircle2 className="w-3 h-3" />
                         <span>Verified</span>
                       </span>
@@ -277,7 +277,7 @@ export default function PaymentsPage() {
                   </button>
                   <button
                     type="submit"
-                    className="px-4 py-1.5 rounded-lg bg-[#174D3A] text-white text-xs font-semibold hover:bg-[#103729]"
+                    className="px-4 py-1.5 rounded-lg bg-[#452D24] text-white text-xs font-semibold hover:bg-[#37231C]"
                   >
                     Confirm Receipt (Mock)
                   </button>

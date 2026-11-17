@@ -42,20 +42,20 @@ export function TeacherDirectory() {
 
     if (hasA && hasB) {
       return (
-        <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-bold bg-[#174D3A] text-white">
+        <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-bold bg-[#452D24] text-white">
           <span>Categories A & B</span>
         </span>
       );
     }
     if (hasA) {
       return (
-        <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-bold bg-[#174D3A] text-white">
+        <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-bold bg-[#452D24] text-white">
           <span>Category A (1 Juz/wk)</span>
         </span>
       );
     }
     return (
-      <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-bold bg-[#C6A45A] text-[#103729]">
+      <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-bold bg-[#E84F12] text-[#37231C]">
         <span>Category B (½ Juz/wk)</span>
       </span>
     );
@@ -76,7 +76,7 @@ export function TeacherDirectory() {
 
         <Link
           href="/teachers/new"
-          className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[#174D3A] text-white text-xs sm:text-sm font-semibold hover:bg-[#103729] transition shadow-xs ring-1 ring-[#C6A45A]/30 shrink-0"
+          className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[#452D24] text-white text-xs sm:text-sm font-semibold hover:bg-[#37231C] transition shadow-xs ring-1 ring-[#E84F12]/30 shrink-0"
         >
           <UserPlus className="w-4 h-4" />
           <span>Register New Teacher</span>
@@ -94,7 +94,7 @@ export function TeacherDirectory() {
               placeholder="Search by instructor name, employee ID, qualification..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="w-full pl-9 pr-4 py-2 rounded-lg bg-background border border-border text-xs focus:outline-hidden focus:ring-2 focus:ring-[#174D3A]"
+              className="w-full pl-9 pr-4 py-2 rounded-lg bg-background border border-border text-xs focus:outline-hidden focus:ring-2 focus:ring-[#452D24]"
             />
           </div>
 
@@ -103,7 +103,7 @@ export function TeacherDirectory() {
             <select
               value={category}
               onChange={(e) => setCategory(e.target.value as StudentCategory | "both" | "all")}
-              className="w-full px-3 py-2 rounded-lg bg-background border border-border text-xs focus:outline-hidden focus:ring-2 focus:ring-[#174D3A]"
+              className="w-full px-3 py-2 rounded-lg bg-background border border-border text-xs focus:outline-hidden focus:ring-2 focus:ring-[#452D24]"
             >
               <option value="all">All Category Assignments</option>
               <option value="A">Assigned Category A</option>
@@ -117,7 +117,7 @@ export function TeacherDirectory() {
             <select
               value={status}
               onChange={(e) => setStatus(e.target.value as "active" | "on_leave" | "inactive" | "all")}
-              className="w-full px-3 py-2 rounded-lg bg-background border border-border text-xs focus:outline-hidden focus:ring-2 focus:ring-[#174D3A]"
+              className="w-full px-3 py-2 rounded-lg bg-background border border-border text-xs focus:outline-hidden focus:ring-2 focus:ring-[#452D24]"
             >
               <option value="all">All Faculty Statuses</option>
               <option value="active">Active On-Duty</option>
@@ -129,7 +129,7 @@ export function TeacherDirectory() {
         <div className="flex items-center justify-between pt-2 border-t border-border/60 text-xs text-muted-foreground">
           <div>
             Showing <strong className="text-foreground">{teachers.length}</strong> instructor profiles
-            {isPending && <span className="ml-2 text-emerald-600 animate-pulse">• Updating...</span>}
+            {isPending && <span className="ml-2 text-[#C35A2F] animate-pulse">• Updating...</span>}
           </div>
 
           {(search || category !== "all" || status !== "all") && (
@@ -140,7 +140,7 @@ export function TeacherDirectory() {
                 setCategory("all");
                 setStatus("all");
               }}
-              className="text-[#174D3A] dark:text-[#C6A45A] font-medium hover:underline"
+              className="text-[#452D24] dark:text-[#E84F12] font-medium hover:underline"
             >
               Clear Filters
             </button>
@@ -175,7 +175,7 @@ export function TeacherDirectory() {
                 <tr key={teacher.id} className="hover:bg-muted/40 transition">
                   <td className="py-3.5 px-4">
                     <div className="flex items-center gap-3">
-                      <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#174D3A] to-[#103729] text-[#C6A45A] font-bold text-xs flex items-center justify-center shrink-0">
+                      <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#452D24] to-[#37231C] text-[#E84F12] font-bold text-xs flex items-center justify-center shrink-0">
                         {teacher.fullName
                           .split(" ")
                           .map((n) => n[0])
@@ -198,11 +198,11 @@ export function TeacherDirectory() {
                   </td>
                   <td className="py-3.5 px-4 space-y-0.5">
                     <div className="flex items-center gap-1.5 text-muted-foreground">
-                      <Mail className="w-3 h-3 text-[#174D3A] dark:text-[#C6A45A]" />
+                      <Mail className="w-3 h-3 text-[#452D24] dark:text-[#E84F12]" />
                       <span className="truncate">{teacher.email}</span>
                     </div>
                     <div className="flex items-center gap-1.5 text-muted-foreground">
-                      <Phone className="w-3 h-3 text-[#174D3A] dark:text-[#C6A45A]" />
+                      <Phone className="w-3 h-3 text-[#452D24] dark:text-[#E84F12]" />
                       <span>{teacher.phone}</span>
                     </div>
                   </td>
@@ -210,7 +210,7 @@ export function TeacherDirectory() {
                     {getCategoryBadge(teacher.assignedCategories)}
                   </td>
                   <td className="py-3.5 px-4">
-                    <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 border border-emerald-500/30">
+                    <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-[#E84F12]/10 text-[#9B4123] dark:text-[#E84F12] border border-[#E84F12]/30">
                       <CheckCircle2 className="w-3 h-3" />
                       <span className="capitalize">{teacher.status.replace("_", " ")}</span>
                     </span>
@@ -241,7 +241,7 @@ export function TeacherDirectory() {
           >
             <div className="flex items-start justify-between">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#174D3A] to-[#103729] text-[#C6A45A] font-bold text-xs flex items-center justify-center shrink-0">
+                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#452D24] to-[#37231C] text-[#E84F12] font-bold text-xs flex items-center justify-center shrink-0">
                   {teacher.fullName
                     .split(" ")
                     .map((n) => n[0])
@@ -275,7 +275,7 @@ export function TeacherDirectory() {
               <button
                 type="button"
                 onClick={() => setViewTeacher(teacher)}
-                className="px-3 py-1 rounded-md bg-[#174D3A] text-white text-xs font-medium hover:bg-[#103729]"
+                className="px-3 py-1 rounded-md bg-[#452D24] text-white text-xs font-medium hover:bg-[#37231C]"
               >
                 View Teacher Details
               </button>
@@ -300,7 +300,7 @@ export function TeacherDirectory() {
             </button>
 
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#174D3A] to-[#103729] text-[#C6A45A] font-bold text-sm flex items-center justify-center shrink-0">
+              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#452D24] to-[#37231C] text-[#E84F12] font-bold text-sm flex items-center justify-center shrink-0">
                 {viewTeacher.fullName
                   .split(" ")
                   .map((n) => n[0])
@@ -328,7 +328,7 @@ export function TeacherDirectory() {
                 <span className="text-muted-foreground">Phone:</span>
                 <a
                   href={`tel:${viewTeacher.phone}`}
-                  className="font-semibold text-[#174D3A] dark:text-[#C6A45A]"
+                  className="font-semibold text-[#452D24] dark:text-[#E84F12]"
                 >
                   {viewTeacher.phone}
                 </a>

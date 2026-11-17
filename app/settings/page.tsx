@@ -38,7 +38,7 @@ export default function SettingsPage() {
           {/* Institutional Identity Card */}
           <div className="bg-card text-card-foreground rounded-xl border border-border p-5 shadow-xs space-y-4">
             <div className="flex items-center gap-2.5 pb-3 border-b border-border">
-              <School className="w-5 h-5 text-[#174D3A] dark:text-[#C6A45A]" />
+              <School className="w-5 h-5 text-[#452D24] dark:text-[#E84F12]" />
               <h3 className="text-sm font-bold text-foreground">
                 School Information
               </h3>
@@ -87,7 +87,7 @@ export default function SettingsPage() {
           {/* Curriculum Category Rules Card */}
           <div className="bg-card text-card-foreground rounded-xl border border-border p-5 shadow-xs space-y-4">
             <div className="flex items-center gap-2.5 pb-3 border-b border-border">
-              <Sparkles className="w-5 h-5 text-[#C6A45A]" />
+              <Sparkles className="w-5 h-5 text-[#E84F12]" />
               <h3 className="text-sm font-bold text-foreground">
                 Hifz Target Benchmarks
               </h3>
@@ -117,14 +117,14 @@ export default function SettingsPage() {
               <span>Prototype Runtime Boundary</span>
             </div>
             <p className="leading-relaxed">
-              This application is configured as an isolated frontend prototype. No production credentials or live Supabase database connections are active in this build. All newly created students and teachers remain in the active browser memory state.
+              This is a frontend-only prototype with no backend or database connection. New students and teachers remain in the active browser memory state.
             </p>
           </div>
 
           <div className="flex justify-end pt-2">
             <button
               type="submit"
-              className="px-6 py-2 rounded-xl bg-[#174D3A] text-white text-xs font-semibold hover:bg-[#103729]"
+              className="px-6 py-2 rounded-xl bg-[#452D24] text-white text-xs font-semibold hover:bg-[#37231C]"
             >
               Save Configuration (Mock)
             </button>

@@ -35,9 +35,9 @@ export function RecentActivityCard({ activities, isEmpty = false }: RecentActivi
   const getIcon = (category: string) => {
     switch (category) {
       case "memorisation":
-        return <BookCheck className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />;
+        return <BookCheck className="w-4 h-4 text-[#C35A2F] dark:text-[#E84F12]" />;
       case "student":
-        return <UserPlus className="w-4 h-4 text-[#174D3A] dark:text-[#C6A45A]" />;
+        return <UserPlus className="w-4 h-4 text-[#452D24] dark:text-[#E84F12]" />;
       case "attendance":
         return <ClipboardList className="w-4 h-4 text-blue-600 dark:text-blue-400" />;
       case "payment":
@@ -51,7 +51,7 @@ export function RecentActivityCard({ activities, isEmpty = false }: RecentActivi
     <div className="bg-card text-card-foreground rounded-xl border border-border p-5 shadow-xs flex flex-col">
       <div className="flex items-center justify-between pb-3 border-b border-border mb-3">
         <div className="flex items-center gap-2">
-          <Clock className="w-4 h-4 text-[#C6A45A]" />
+          <Clock className="w-4 h-4 text-[#E84F12]" />
           <h3 className="text-sm font-bold text-foreground">
             Recent Halaqah & School Activity
           </h3>
