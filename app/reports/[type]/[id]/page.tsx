@@ -1,5 +1,6 @@
 "use client";
 
+import { Suspense } from "react";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { ArrowLeft, Printer } from "lucide-react";
@@ -8,6 +9,20 @@ import { SchoolHeaderLogo } from "@/components/layout/school-header-logo";
 import { MOCK_MONTHLY_REPORTS, MOCK_WEEKLY_REPORTS } from "@/lib/reporting-data";
 
 export default function ReportDetailPage() {
+  return (
+    <Suspense
+      fallback={
+        <div className="rounded-xl border border-border bg-card p-8 text-center">
+          Loading report...
+        </div>
+      }
+    >
+      <ReportDetailContent />
+    </Suspense>
+  );
+}
+
+function ReportDetailContent() {
   const params = useParams<{ type: string; id: string }>();
   const monthly = params.type === "monthly";
   const report = monthly
