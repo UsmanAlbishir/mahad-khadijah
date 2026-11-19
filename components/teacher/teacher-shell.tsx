@@ -8,11 +8,13 @@ import {
   CalendarCheck2,
   ChartNoAxesCombined,
   ClipboardList,
+  FileSpreadsheet,
   GraduationCap,
   LayoutDashboard,
   Menu,
   PanelLeftClose,
   UserRound,
+  UsersRound,
   X,
 } from "lucide-react";
 import { DemoBadge } from "@/components/ui/demo-badge";
@@ -27,6 +29,14 @@ const navigation = [
   { label: "Weekly reports", href: "/teacher/reports/weekly", icon: ChartNoAxesCombined },
   { label: "Monthly reports", href: "/teacher/reports/monthly", icon: ChartNoAxesCombined },
   { label: "My profile", href: "/teacher/profile", icon: UserRound },
+];
+
+const resultsNavigation = [
+  { label: "Results Dashboard", href: "/teacher/results", icon: LayoutDashboard },
+  { label: "Assigned Categories", href: "/teacher/results/categories", icon: UsersRound },
+  { label: "Enter Results", href: "/teacher/results/enter", icon: FileSpreadsheet },
+  { label: "Examination Records", href: "/teacher/results/records", icon: ClipboardList },
+  { label: "Result Preview", href: "/teacher/results/preview/exam-ah-term1", icon: ChartNoAxesCombined },
 ];
 
 export function TeacherShell({ children }: Readonly<{ children: React.ReactNode }>) {
@@ -121,6 +131,31 @@ function Navigation({
       <p className="px-3 pb-2 text-[10px] font-semibold uppercase tracking-wide text-white/50">Teaching</p>
       {navigation.map(({ label, href, icon: Icon }) => {
         const active = pathname === href || (href !== "/teacher/dashboard" && pathname.startsWith(`${href}/`));
+
+        return (
+          <Link
+            key={href}
+            href={href}
+            onClick={onNavigate}
+            aria-current={active ? "page" : undefined}
+            className={`flex min-h-10 items-center gap-3 rounded-md px-3 text-[13px] font-medium transition-colors ${
+              active
+                ? "bg-white/10 text-white ring-1 ring-inset ring-[#E84F12]/60"
+                : "text-white/70 hover:bg-white/10 hover:text-white"
+            }`}
+          >
+            <Icon className={`size-4 shrink-0 ${active ? "text-[#E84F12]" : "text-white/50"}`} />
+            <span className="min-w-0 flex-1 truncate">{label}</span>
+          </Link>
+        );
+      })}
+      <p className="px-3 pb-2 pt-4 text-[10px] font-semibold uppercase tracking-wide text-white/50">Results management</p>
+      {resultsNavigation.map(({ label, href, icon: Icon }) => {
+        const active = href === "/teacher/results"
+          ? pathname === href
+          : href === "/teacher/results/preview/exam-ah-term1"
+            ? pathname.startsWith("/teacher/results/preview")
+            : pathname.startsWith(href);
 
         return (
           <Link

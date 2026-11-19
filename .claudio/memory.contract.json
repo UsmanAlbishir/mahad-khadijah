@@ -3,7 +3,7 @@
   "workspaceId": "1842bea0dd7f3cad",
   "workspaceName": "mahad-khadijah",
   "enabled": true,
-  "updatedAt": "2026-11-18T16:53:46.639Z",
+  "updatedAt": "2026-11-19T13:24:20.777Z",
   "detectedStack": {
     "languages": [
       "JavaScript/TypeScript"
@@ -56,7 +56,7 @@
         "evidence": {
           "file": "package.json"
         },
-        "lastVerifiedAt": "2026-11-18T16:53:46.637Z"
+        "lastVerifiedAt": "2026-11-19T13:24:20.776Z"
       },
       {
         "id": "01d2e80f881b1ed4",
@@ -68,7 +68,7 @@
         "evidence": {
           "file": "package.json"
         },
-        "lastVerifiedAt": "2026-11-18T16:53:46.637Z"
+        "lastVerifiedAt": "2026-11-19T13:24:20.776Z"
       }
     ],
     "packageManager": [],
@@ -181,7 +181,7 @@
         "evidence": {
           "file": "app/dashboard/page.tsx"
         },
-        "lastVerifiedAt": "2026-11-18T16:53:46.638Z"
+        "lastVerifiedAt": "2026-11-19T13:24:20.777Z"
       },
       {
         "id": "023b8f81605e4034",
@@ -193,7 +193,7 @@
         "evidence": {
           "file": "app/payments/page.tsx"
         },
-        "lastVerifiedAt": "2026-11-18T16:53:46.638Z"
+        "lastVerifiedAt": "2026-11-19T13:24:20.777Z"
       },
       {
         "id": "df916f5e3cd0de9f",
@@ -205,7 +205,7 @@
         "evidence": {
           "file": "app/sessions/page.tsx"
         },
-        "lastVerifiedAt": "2026-11-18T16:53:46.638Z"
+        "lastVerifiedAt": "2026-11-19T13:24:20.777Z"
       },
       {
         "id": "04137cfc252e078e",
@@ -217,7 +217,7 @@
         "evidence": {
           "file": "components/dashboard/dashboard-metrics-cards.tsx"
         },
-        "lastVerifiedAt": "2026-11-18T16:53:46.638Z"
+        "lastVerifiedAt": "2026-11-19T13:24:20.777Z"
       },
       {
         "id": "c852b82f5bb55fae",
@@ -229,7 +229,7 @@
         "evidence": {
           "file": "components/dashboard/memorisation-progress-card.tsx"
         },
-        "lastVerifiedAt": "2026-11-18T16:53:46.638Z"
+        "lastVerifiedAt": "2026-11-19T13:24:20.777Z"
       },
       {
         "id": "aa2e9ca3eaae2e40",
@@ -241,7 +241,7 @@
         "evidence": {
           "file": "components/dashboard/quick-actions-bar.tsx"
         },
-        "lastVerifiedAt": "2026-11-18T16:53:46.638Z"
+        "lastVerifiedAt": "2026-11-19T13:24:20.777Z"
       },
       {
         "id": "78eba274c04240af",
@@ -253,7 +253,7 @@
         "evidence": {
           "file": "components/dashboard/recent-activity-card.tsx"
         },
-        "lastVerifiedAt": "2026-11-18T16:53:46.639Z"
+        "lastVerifiedAt": "2026-11-19T13:24:20.777Z"
       },
       {
         "id": "25938c054da61a42",
@@ -265,7 +265,7 @@
         "evidence": {
           "file": "app/teacher/dashboard/page.tsx"
         },
-        "lastVerifiedAt": "2026-11-18T16:53:46.638Z"
+        "lastVerifiedAt": "2026-11-19T13:24:20.777Z"
       }
     ],
     "forbiddenActions": [
@@ -290,7 +290,7 @@
         "evidence": {
           "file": "package.json"
         },
-        "lastVerifiedAt": "2026-11-18T16:53:46.637Z"
+        "lastVerifiedAt": "2026-11-19T13:24:20.776Z"
       },
       {
         "id": "935dba6652533a20",
@@ -302,7 +302,7 @@
         "evidence": {
           "file": "package.json"
         },
-        "lastVerifiedAt": "2026-11-18T16:53:46.637Z"
+        "lastVerifiedAt": "2026-11-19T13:24:20.776Z"
       },
       {
         "id": "36baac0f981c9508",
@@ -314,7 +314,7 @@
         "evidence": {
           "file": "package.json"
         },
-        "lastVerifiedAt": "2026-11-18T16:53:46.637Z"
+        "lastVerifiedAt": "2026-11-19T13:24:20.776Z"
       },
       {
         "id": "80cdfffbb2da935f",
@@ -326,7 +326,7 @@
         "evidence": {
           "file": "package.json"
         },
-        "lastVerifiedAt": "2026-11-18T16:53:46.638Z"
+        "lastVerifiedAt": "2026-11-19T13:24:20.776Z"
       }
     ],
     "businessRules": [],

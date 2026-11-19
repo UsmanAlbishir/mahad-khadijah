@@ -12,6 +12,7 @@ import {
   Calendar,
   CreditCard,
   BarChart3,
+  FileSpreadsheet,
   Settings,
   ChevronRight,
   ShieldCheck,
@@ -70,6 +71,12 @@ export const NAVIGATION_ITEMS: NavItem[] = [
     title: "Payments",
     href: "/payments",
     icon: CreditCard,
+    category: "admin",
+  },
+  {
+    title: "Results",
+    href: "/results",
+    icon: FileSpreadsheet,
     category: "admin",
   },
   {
@@ -171,35 +178,65 @@ export function Sidebar({ onItemClick, className = "" }: SidebarProps) {
               const isActive = pathname.startsWith(item.href);
 
               return (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  onClick={onItemClick}
-                  className={`group relative flex items-center justify-between px-3 py-2.5 rounded-lg text-sm font-medium transition-all duration-150 ${
-                    isActive
-                      ? "bg-white/10 text-white font-semibold shadow-xs ring-1 ring-[#E84F12]/60"
-                      : "text-white/70 hover:bg-white/10 hover:text-white"
-                  }`}
-                >
-                  {isActive && (
-                    <span className="absolute bottom-1.5 left-0 top-1.5 w-1 rounded-r bg-[#E84F12]" />
-                  )}
+                <React.Fragment key={item.href}>
+                  <Link
+                    href={item.href}
+                    onClick={onItemClick}
+                    className={`group relative flex items-center justify-between px-3 py-2.5 rounded-lg text-sm font-medium transition-all duration-150 ${
+                      isActive
+                        ? "bg-white/10 text-white font-semibold shadow-xs ring-1 ring-[#E84F12]/60"
+                        : "text-white/70 hover:bg-white/10 hover:text-white"
+                    }`}
+                  >
+                    {isActive && (
+                      <span className="absolute bottom-1.5 left-0 top-1.5 w-1 rounded-r bg-[#E84F12]" />
+                    )}
 
-                  <div className="flex items-center gap-3 min-w-0">
-                    <Icon
-                      className={`w-4 h-4 shrink-0 transition-transform group-hover:scale-110 ${
-                        isActive ? "text-[#E84F12]" : "text-white/50"
+                    <div className="flex items-center gap-3 min-w-0">
+                      <Icon
+                        className={`w-4 h-4 shrink-0 transition-transform group-hover:scale-110 ${
+                          isActive ? "text-[#E84F12]" : "text-white/50"
+                        }`}
+                      />
+                      <span className="truncate">{item.title}</span>
+                    </div>
+
+                    <ChevronRight
+                      className={`w-3.5 h-3.5 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all ${
+                        isActive ? "text-[#E84F12]" : "text-white/35"
                       }`}
                     />
-                    <span className="truncate">{item.title}</span>
-                  </div>
-
-                  <ChevronRight
-                    className={`w-3.5 h-3.5 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all ${
-                      isActive ? "text-[#E84F12]" : "text-white/35"
-                    }`}
-                  />
-                </Link>
+                  </Link>
+                  {item.href === "/results" && pathname.startsWith("/results") && (
+                    <nav aria-label="Results navigation" className="ml-5 mt-1 space-y-1 border-l border-white/15 pl-3">
+                      {[
+                        { title: "Results Dashboard", href: "/results" },
+                        { title: "Examination Records", href: "/results/examinations" },
+                        { title: "Enter Results", href: "/results/enter" },
+                        { title: "Result Preview", href: "/results/preview/exam-ah-term1" },
+                      ].map((resultItem) => {
+                        const active = resultItem.href === "/results"
+                          ? pathname === "/results"
+                          : resultItem.href === "/results/preview/exam-ah-term1"
+                            ? pathname.startsWith("/results/preview")
+                            : pathname.startsWith(resultItem.href);
+                        return (
+                          <Link
+                            key={resultItem.href}
+                            href={resultItem.href}
+                            onClick={onItemClick}
+                            aria-current={active ? "page" : undefined}
+                            className={`block rounded-md px-2.5 py-2 text-xs font-medium ${
+                              active ? "bg-white/10 text-white" : "text-white/60 hover:bg-white/10 hover:text-white"
+                            }`}
+                          >
+                            {resultItem.title}
+                          </Link>
+                        );
+                      })}
+                    </nav>
+                  )}
+                </React.Fragment>
               );
             })}
           </nav>

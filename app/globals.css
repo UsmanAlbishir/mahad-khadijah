@@ -116,3 +116,39 @@ html {
     box-shadow: none !important;
   }
 }
+
+.results-print-view {
+  page: results-sheet;
+}
+
+@page results-sheet {
+  size: landscape;
+  margin: 8mm;
+}
+
+@media print {
+  .results-print-view,
+  .results-print-view * {
+    color: #000 !important;
+    background-color: #fff !important;
+  }
+
+  .results-print-view {
+    width: 100% !important;
+    padding: 0 !important;
+  }
+
+  .results-print-view table {
+    width: 100% !important;
+    min-width: 0 !important;
+    table-layout: fixed;
+    font-size: 7px !important;
+  }
+
+  .results-print-view th,
+  .results-print-view td {
+    border: 0.5pt solid #000 !important;
+    padding: 2px !important;
+    color: #000 !important;
+  }
+}
